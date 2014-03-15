@@ -1,0 +1,19 @@
+{
+    "name": "griffithben/brewerwall",
+    "description": "API For Brewing Ingredients",
+    "require": {
+        "robmorgan/phinx": "*",
+	"slim/slim": "2.*"
+    },
+    "require-dev": {
+        "robmorgan/phinx": "*",
+	"slim/slim": "2.*"
+    },
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "griffithben",
+            "email": "griffith.ben@gmail.com"
+        }
+    ]
+}
