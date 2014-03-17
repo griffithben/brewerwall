@@ -1,2 +1,5 @@
 phinx.yml
 vendor/*
+node_modules/*
+components/*
+.DS_Store

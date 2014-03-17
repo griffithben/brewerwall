@@ -3,7 +3,10 @@
     "description": "API For Brewing Ingredients",
     "require": {
         "robmorgan/phinx": "*",
-	"slim/slim": "2.*"
+	"slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "twig/twig": "1.15.*",
+        "vrana/notorm": "dev-master"
     },
     "require-dev": {
         "robmorgan/phinx": "*",
