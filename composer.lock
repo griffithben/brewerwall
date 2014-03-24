@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "75f294e498626007dd692ec5d04903c0",
+    "hash": "ea3357c66f57c3cc70d86a872cb9ab88",
     "packages": [
         {
             "name": "robmorgan/phinx",
@@ -475,43 +475,47 @@
             "time": "2014-02-13 10:19:29"
         },
         {
-            "name": "vrana/notorm",
-            "version": "dev-master",
+            "name": "zendframework/zend-db",
+            "version": "2.1.6",
+            "target-dir": "Zend/Db",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vrana/notorm.git",
-                "reference": "d7f320a3d8da0dbcb17187ad4b9c91a396f5d0c6"
+                "url": "https://github.com/zendframework/Component_ZendDb.git",
+                "reference": "2b4ca5895e3291912039f6357b8e82882aebd2d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vrana/notorm/zipball/d7f320a3d8da0dbcb17187ad4b9c91a396f5d0c6",
-                "reference": "d7f320a3d8da0dbcb17187ad4b9c91a396f5d0c6",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendDb/zipball/2b4ca5895e3291912039f6357b8e82882aebd2d9",
+                "reference": "2b4ca5895e3291912039f6357b8e82882aebd2d9",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "zendframework/zend-stdlib": "2.1.6"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                }
+            },
             "autoload": {
-                "files": [
-                    "NotORM.php"
-                ]
+                "psr-0": {
+                    "Zend\\Db\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache-2.0",
-                "GPL-2.0+"
+                "BSD-3-Clause"
             ],
-            "authors": [
-                {
-                    "name": "Jakub Vrána",
-                    "homepage": "http://www.vrana.cz/"
-                }
-            ],
-            "description": "NotORM is a PHP library for simple working with data in the database.",
-            "homepage": "http://www.notorm.com/",
             "keywords": [
-                "database",
-                "dbal"
+                "db",
+                "zf2"
             ],
-            "time": "2014-02-09 20:16:02"
+            "time": "2014-03-04 17:00:12"
         }
     ],
     "packages-dev": [
@@ -521,9 +525,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "vrana/notorm": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": [
 
     ],
