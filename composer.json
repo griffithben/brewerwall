@@ -6,7 +6,9 @@
 	      "slim/slim": "2.*",
         "slim/views": "0.1.*",
         "twig/twig": "1.15.*",
-        "zendframework/zend-db": "2.1.6"
+        "zendframework/zend-db": "2.1.6",
+        "shuber/curl": "dev-master",
+        "phpunit/phpunit": "3.7.32"
     },
     "require-dev": {
         "robmorgan/phinx": "*",
