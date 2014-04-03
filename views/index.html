@@ -1,4 +1,50 @@
 {% extends "layout.html" %}
 {% block content %}
-   My Index File.
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+      <div class="card"></div>
+    </div>
+    <div class="col-md-2">
+      <div class="card"></div>
+    </div>
+    <div class="col-md-2">
+      <div class="card"></div>
+    </div>
+    <div class="col-md-2">
+      <div class="card"></div>
+    </div>
+    <div class="col-md-2">
+      <div class="card"></div>
+    </div>
+</div>
+<div class="row">
+   <div class="col-md-6">
+     <h3>Simple Requests</h3>
+     <p>Perform a GET request to retrieve all yeasts</p>
+     <pre>$ curl http://brewerwall.com/api/yeasts</pre>
+     <p>Perform a GET request on a specific ID</p>
+     <pre>$ curl http://brewerwall.com/api/yeasts/1</pre>
+     <p>Perform a POST request to filter on certain parameters</p>
+     <pre>$ curl --data "temperature=80" http://brewerwall.dev/api/yeasts/</pre>
+   </div>
+   <div class="col-md-6">
+     <h3>JSON Everywhere</h3>
+     <p>Responses from the server will return as JSON</p>
+     <pre>
+[{
+  id: 1,
+  laboratory: 'White Labs',
+  strain: 'WLP001',
+  name: 'California Ale Yeast',
+  description: 'Description of the yeast here',
+  attenuation_min: 73
+  attenuation_max: 80
+  flocculation: Medium
+  temperature_min: 68
+  temperature_max: 73
+  tolerance: 15
+}, {...}]
+     </pre>
+   </div>
+</div>
 {% endblock %}

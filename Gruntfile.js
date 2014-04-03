@@ -45,6 +45,49 @@ module.exports = function(grunt) {
         }
       }
     },
+    uglify: {
+      options: {
+        mangle: false
+      },
+      standalone: {
+        options: {
+          beautify: false
+        },
+        files: {
+          'public/js/dev/components/json2.js':['components/json2/json2.js'],
+          'public/js/dev/components/jquery.js':['components/jquery/dist/jquery.js'],
+          'public/js/dev/components/underscore.js':['components/underscore/underscore.js'],
+          'public/js/dev/components/backbone.js':['components/backbone/backbone.js'],
+          'public/js/dev/components/bootstrap.js':['components/bootstrap/dist/js/bootstrap.min.js'],
+          'public/js/dev/components/require.js':['components/requirejs/require.js'],
+          'public/js/dev/components/text.js':['components/requirejs-text/text.js'],
+          'public/js/html5shiv.js':['components/html5shiv/dist/html5shiv.js'],
+          'public/js/respond.js':['components/respond/src/respond.js']
+        }
+      }
+    },
+    md5: {
+      compile: {
+        files: {
+          'public/js/md5/': 'public/js/prod/*.js'
+        },
+        options: {
+          keepBasename: true,
+          keepExtension: true,
+          after: function(fileChanges){
+            var dictionary = {};
+            function strip(str){
+              return str.replace(/^[\/]?public/,'').replace(/.js$/,'');
+            }
+            fileChanges.forEach(function(fc){
+              var index = strip('/' + fc.oldPath);
+              dictionary[index] = strip(fc.newPath);
+            });
+            grunt.file.write('public/modeDictionary.json', JSON.stringify(dictionary,true));
+          }
+        }
+      }
+    },
   });
 
   // Default task(s).
