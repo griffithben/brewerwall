@@ -3,37 +3,29 @@
 namespace App\Collections;
 
 use Zend\Db\Sql\Sql;
+use App\Collections\AbstractCollection;
 
-class YeastCollection {
+class YeastCollection extends AbstractCollection {
   private $_table = "Yeasts";
   private $_pk = "id";
-  private $_adapter = null;
-  private $_sql = null;
-
-  public function __construct($adapter){
-    $this->_adapter = $adapter;
-    $this->_sql = new Sql($adapter);
-  }
 
   public function select(){
     return $this->_sql->select()->from($this->_table);
   }
 
   public function all(){
-    $selectString = $this->_sql->getSqlStringForSqlObject($this->select());
-    $adapter = $this->_adapter;
-    $results = $this->_adapter->query($selectString, $adapter::QUERY_MODE_EXECUTE);
-    return $results;
+    return $this->execute($this->select());
   }
 
   public function id($id){
-    $selectString = $this->_sql->getSqlStringForSqlObject($this->select()->where(array($this->_pk=>$id)));
-    $adapter = $this->_adapter;
-    $results = $this->_adapter->query($selectString, $adapter::QUERY_MODE_EXECUTE);
-    return $results;
+    return $this->execute($this->select()->where(array($this->_pk=>$id)));
   }
 
   public function fields($post){
+
+    if(!is_object($post))
+      return array();
+
     $select = $this->select();
 
     //Laboratory Property
@@ -74,9 +66,6 @@ class YeastCollection {
     if(isset($post->tolerance) && is_numeric($post->tolerance))
       $select->where->greaterThanOrEqualTo('tolerance', $post->tolerance);
 
-    $selectString = $this->_sql->getSqlStringForSqlObject($select);
-    $adapter = $this->_adapter;
-    $results = $this->_adapter->query($selectString, $adapter::QUERY_MODE_EXECUTE);
-    return $results;
+    return $this->execute($select);
   }
 }
