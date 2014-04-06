@@ -8,45 +8,64 @@
 </div>
 <br/>
 <div class="row">
-    <div class="col-sm-2 col-md-2 col-sm-offset-1 col-md-offset-1">
-      <div class="card">
-        <img src="/img/beer.svg"/>
-        <h3>STYLES</h3>
-        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.</p>
-      </div>
+    <div class="col-sm-2 col-md-2">
+      <a href="/styles">
+        <div class="card">
+          <img src="/img/beer.svg"/>
+          <h3>STYLES</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.</p>
+        </div>
+      </a>
     </div>
     <div class="col-sm-2 col-md-2">
-      <div class="card">
-        <img src="/img/hops.svg" />
-        <h3>HOPS</h3>
-        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
-      </div>
+      <a href="/hops">
+        <div class="card">
+          <img src="/img/hops.svg" />
+          <h3>HOPS</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+        </div>
+      </a>
     </div>
     <div class="col-sm-2 col-md-2">
-      <div class="card">
-        <img src="/img/yeast.svg" />
-        <h3>YEASTS</h3>
-        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
-      </div>
+      <a href="/yeasts">
+        <div class="card">
+          <img src="/img/yeast.svg" />
+          <h3>YEASTS</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+        </div>
+      </a>
     </div>
     <div class="col-sm-2 col-md-2">
-      <div class="card">
-        <img src="/img/grain.svg" />
-        <h3>GRAINS</h3>
-        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
-      </div>
+      <a href="/grains">
+        <div class="card">
+          <img src="/img/grain.svg" />
+          <h3>GRAINS</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+        </div>
+      </a>
     </div>
     <div class="col-sm-2 col-md-2">
-      <div class="card">
-        <img src="/img/srm.svg" />
-        <h3>SRM</h3>
-        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
-      </div>
+      <a href="/calculations">
+        <div class="card">
+          <img src="/img/calculator.svg" />
+          <h3>MATH</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-2 col-md-2">
+      <a href="/srms">
+        <div class="card">
+          <img src="/img/srm.svg" />
+          <h3>SRM</h3>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
+        </div>
+      </a>
     </div>
 </div>
 <br/>
 <div class="row">
-   <div class="col-md-6">
+   <div class="col-sm-6 col-md-6">
      <h3>Simple Requests</h3>
      <p>Perform a GET request to retrieve all yeasts</p>
      <pre>$ curl http://brewerwall.com/api/yeasts</pre>
@@ -55,7 +74,7 @@
      <p>Perform a POST request to filter on certain parameters</p>
      <pre>$ curl --data "temperature=80" http://brewerwall.dev/api/yeasts/</pre>
    </div>
-   <div class="col-md-6">
+   <div class="col-sm-6 col-md-6">
      <h3>JSON Everywhere</h3>
      <p>Responses from the server will return as JSON</p>
      <pre>

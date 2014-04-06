@@ -17,16 +17,24 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
 .headline
   text-align: center
 
+a
+  div.card
+    color: white
+  &:hover
+    text-decoration: none
+
 div.card
   background-color: #4b6169
   min-height: 180px
   width: 100%
   text-align: center
-  padding: 10px 5px 5px 5px
+  padding: 20px 5px 5px 5px
   border-bottom: solid 4px #2c3237
-  b
+  cursor: pointer
+  &:hover
+    background-color: #567783
   img
-    width: 100px
+    width: 80px
     color: black
     path
       color: red
@@ -35,9 +43,35 @@ header
   margin-top: 20px
   div.logo
     img
-      width: 70px
+      width: 68px
       margin-right: 10px
     h1, h2, h3, h4, h5
       display: inline-block
       vertical-align: middle
-      font-size: 48px
+      font-size: 44px
+  ul.brew-nav
+    text-align: right
+    margin-top: 40px
+    li
+      display: inline
+      list-style-type: none
+      padding: 4px 10px
+      text-transform: uppercase
+      background-color: #cf7c00
+      -moz-border-radius: 5px
+      border-radius: 5px
+      font-size: 12px
+      &:hover
+        background-color: #ffbc2f
+      a
+        &:hover
+          color: white
+          text-decoration: none
+        color: white
+
+@media (max-width: 768px)
+  ul.brew-nav
+    text-align: center !important
+    margin-top: 20px !important
+  div.logo
+    text-align: center !important
