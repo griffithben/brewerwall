@@ -13,6 +13,18 @@ class AbstractCollection{
     $this->_sql = new Sql($adapter);
   }
 
+  public function select(){
+    return $this->_sql->select()->from($this->_table);
+  }
+
+  public function all(){
+    return $this->execute($this->select());
+  }
+
+  public function id($id){
+    return $this->execute($this->select()->where(array($this->_pk=>$id)));
+  }
+
   protected function execute($statement){
     $selectString = $this->_sql->getSqlStringForSqlObject($statement);
     $adapter = $this->_adapter;

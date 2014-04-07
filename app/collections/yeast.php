@@ -6,20 +6,8 @@ use Zend\Db\Sql\Sql;
 use App\Collections\AbstractCollection;
 
 class YeastCollection extends AbstractCollection {
-  private $_table = "Yeasts";
-  private $_pk = "id";
-
-  public function select(){
-    return $this->_sql->select()->from($this->_table);
-  }
-
-  public function all(){
-    return $this->execute($this->select());
-  }
-
-  public function id($id){
-    return $this->execute($this->select()->where(array($this->_pk=>$id)));
-  }
+  protected $_table = "yeasts";
+  protected $_pk = "id";
 
   public function fields($post){
 
