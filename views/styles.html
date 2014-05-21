@@ -1,4 +1,39 @@
 {% extends "layout.html" %}
 {% block content %}
-Styles
+  <table class="table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Name</td>
+        <td>Origin</td>
+        <td>ABV</td>
+        <td>IBU</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for style in styles %}
+        <tr>
+          <td>{{ style.id }}</td>
+          <td>{{ style.name }}</td>
+          <td>{{ style.origin }}</td>
+          <td>
+            {% if style.abv_min == 0 and style.abv_max == 0 %}
+              Any
+            {% else %}
+              {{ style.abv_min }} - {{ style.abv_max }}
+            {% endif %}
+          </td>
+          <td>
+            {% if style.ibu_min == 0 and style.ibu_max == 0 %}
+              Any
+            {% else %}
+              {{ style.ibu_min }} - {{ style.ibu_max }}
+            {% endif %}
+          </td>
+        </tr>
+      {% else %}
+          No users have been found.
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

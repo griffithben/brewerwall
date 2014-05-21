@@ -2,6 +2,10 @@
 use Zend\Db\Sql\Sql;
 use App\Collections\YeastCollection;
 
+$app->get('/yeasts', function () use ($app, $adapter)  {
+  $app->render('yeasts.html');
+});
+
 $app->get('/api/yeasts', function () use ($app, $adapter){
   $collection = new YeastCollection($adapter);
   echo json_encode($collection->all()->toArray());

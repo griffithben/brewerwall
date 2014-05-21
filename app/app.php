@@ -41,18 +41,6 @@ $app->get('/about', function () use ($app, $adapter)  {
   $app->render('about.html');
 });
 
-$app->get('/styles', function () use ($app, $adapter)  {
-  $app->render('styles.html');
-});
-
-$app->get('/hops', function () use ($app, $adapter)  {
-  $app->render('hops.html');
-});
-
-$app->get('/yeasts', function () use ($app, $adapter)  {
-  $app->render('yeasts.html');
-});
-
 $app->get('/grains', function () use ($app, $adapter)  {
   $app->render('grains.html');
 });
