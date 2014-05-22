@@ -1,11 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layout_secondary.html" %}
 {% block content %}
-  <table class="table">
+  <h3>Beer Styles</h3>
+  <table class="table table-condensed">
     <thead>
       <tr>
         <td>#</td>
         <td>Name</td>
         <td>Origin</td>
+        <td>Category</td>
         <td>ABV</td>
         <td>IBU</td>
       </tr>
@@ -16,6 +18,7 @@
           <td>{{ style.id }}</td>
           <td>{{ style.name }}</td>
           <td>{{ style.origin }}</td>
+          <td>{{ style.category }}</td>
           <td>
             {% if style.abv_min == 0 and style.abv_max == 0 %}
               Any

@@ -3,7 +3,7 @@ use Zend\Db\Sql\Sql;
 use App\Collections\YeastCollection;
 
 $app->get('/yeasts', function () use ($app, $adapter)  {
-  $app->render('yeasts.html');
+  $app->render('yeasts.html', array('page'=>'yeasts'));
 });
 
 $app->get('/api/yeasts', function () use ($app, $adapter){

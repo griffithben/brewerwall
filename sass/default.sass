@@ -1,4 +1,5 @@
 @import fonts
+@import utility
 
 body
   background-color: #2f2f2f
@@ -32,12 +33,27 @@ div.card
   border-bottom: solid 4px #2c3237
   cursor: pointer
   &:hover
-    background-color: #567783
+    background-color: #577f8e
   img
     width: 80px
     color: black
     path
       color: red
+
+div.dot
+  &.active, &:hover
+    background-color: #577f8e
+  width: 60px
+  height: 60px
+  padding-top: 15px
+  background-color: #4b6169
+  -moz-border-radius: 30px
+  border-radius: 30px
+  text-align: center
+  margin: 5px 0px
+  display: inline-block
+  img
+    width: 30px
 
 header
   margin-top: 20px

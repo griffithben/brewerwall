@@ -42,13 +42,13 @@ $app->get('/about', function () use ($app, $adapter)  {
 });
 
 $app->get('/grains', function () use ($app, $adapter)  {
-  $app->render('grains.html');
+  $app->render('grains.html', array('page'=>'grains'));
 });
 
 $app->get('/calculations', function () use ($app, $adapter)  {
-  $app->render('calculations.html');
+  $app->render('calculations.html', array('page'=>'calculations'));
 });
 
 $app->get('/srms', function () use ($app, $adapter)  {
-  $app->render('srms.html');
+  $app->render('srms.html', array('page'=>'srms'));
 });

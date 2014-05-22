@@ -7,7 +7,7 @@ use App\Collections\BeerStyleCollection;
 $app->get('/styles', function () use ($app, $adapter)  {
   $collection = new BeerStyleCollection($adapter);
   $styles = $collection->all()->toArray();
-  $app->render('styles.html', array('styles'=>$styles));
+  $app->render('styles.html', array('styles'=>$styles, 'page'=>'styles'));
 });
 
 
