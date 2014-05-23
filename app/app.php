@@ -48,7 +48,3 @@ $app->get('/grains', function () use ($app, $adapter)  {
 $app->get('/calculations', function () use ($app, $adapter)  {
   $app->render('calculations.html', array('page'=>'calculations'));
 });
-
-$app->get('/srms', function () use ($app, $adapter)  {
-  $app->render('srms.html', array('page'=>'srms'));
-});

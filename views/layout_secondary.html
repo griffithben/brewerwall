@@ -36,13 +36,12 @@
     	<header>
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="logo">
-							<img src="/img/logo.png"/>
+						<div class="logo secondary">
 							<h1 class="beer-font">BREWERWALL</h1>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<ul class="brew-nav">
+						<ul class="brew-nav secondary">
 							<li><a href="/">home</a></li>
 							<li><a href="/docs">api docs</a></li>
 							<li><a href="/about">about</a></li>
@@ -53,6 +52,11 @@
 			<hr class="condensed"/>
 			<div class="row">
 				<div class="col-sm-1 col-md-1 center">
+					<a href="/">
+						<div class="dot logo">
+							<img src="/img/logo.png"/>
+						</div>
+					</a>
 					<a href="/styles">
 						<div class="dot {% if page == 'styles' %} active {% endif %}">
 							<img src="/img/beer.svg" />

@@ -1,4 +1,24 @@
 {% extends "layout_secondary.html" %}
 {% block content %}
-Srms
+  <h2>SRM</h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <td>SRM</td>
+        <td>Hex</td>
+        <td>Color</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for srm in srms %}
+        <tr>
+          <td>{{ srm.value }}</td>
+          <td>{{ srm.hex }}</td>
+          <td><div class="srm" style="background-color: {{ srm.hex }}"></div></td>
+        </tr>
+      {% else %}
+          No users have been found.
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
