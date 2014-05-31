@@ -1,6 +1,10 @@
 {% extends "layout_secondary.html" %}
 {% block content %}
   <h2>SRM</h2>
+  <hr/>
+  {% for srm in srms %}<span class="srm-item" data-toggle="tooltip" data-placement="top" title="{{ srm.value }} | {{ srm.hex }}" style="background-color: {{ srm.hex }}; width: 2.5%; height: 30px; display: inline-block; margin: 0px;"></span>{% endfor %}
+  <script>$('.srm-item').tooltip();</script>
+  <hr/>
   <table class="table table-condensed">
     <thead>
       <tr>

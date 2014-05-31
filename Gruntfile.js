@@ -64,6 +64,32 @@ module.exports = function(grunt) {
           'public/js/html5shiv.js':['components/html5shiv/dist/html5shiv.js'],
           'public/js/respond.js':['components/respond/src/respond.js']
         }
+      },
+      components: {
+        options: {
+          beautify: false
+        },
+        files: {
+          'public/js/components/json2.js':['components/json2/json2.js'],
+          'public/js/components/jquery.js':['components/jquery/dist/jquery.js'],
+          'public/js/components/underscore.js':['components/underscore/underscore.js'],
+          'public/js/components/backbone.js':['components/backbone/backbone.js'],
+          'public/js/components/bootstrap.js':['components/bootstrap/dist/js/bootstrap.min.js'],
+          'public/js/components/require.js':['components/requirejs/require.js'],
+          'public/js/components/text.js':['components/requirejs-text/text.js'],
+          'public/js/html5shiv.js':['components/html5shiv/dist/html5shiv.js'],
+          'public/js/respond.js':['components/respond/src/respond.js']
+        }
+      }
+
+    },
+    coffee: {
+      oneToOne: {
+        expand: true,
+        cwd: 'coffee/',
+        src: ['**/*.coffee'],
+        dest: 'public/js/dev/objects/',
+        ext: '.js'
       }
     },
     md5: {

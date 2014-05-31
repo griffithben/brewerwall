@@ -24,7 +24,6 @@
 		<link rel="shortcut icon" href="/favicon.ico?v=2" />
     <link href="/css/components.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/css/default.css" media="screen" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="/js/dev/components/jquery.js"></script>
 		<script type="text/javascript" src="/js/dev/components/bootstrap.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,12 +37,13 @@
     	<header>
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="logo secondary">
+						<div class="logo">
+							<img src="/img/logo.png"/>
 							<h1 class="beer-font">BREWERWALL</h1>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<ul class="brew-nav secondary">
+						<ul class="brew-nav">
 							<li><a href="/">home</a></li>
 							<li><a href="/docs">api docs</a></li>
 							<li><a href="/blog">blog</a></li>
@@ -53,48 +53,7 @@
 				</div>
 			</header>
 			<hr class="condensed"/>
-			<div class="row">
-				<div class="col-sm-1 col-md-1 center">
-					<a href="/">
-						<div class="dot logo">
-							<img src="/img/logo.png"/>
-						</div>
-					</a>
-					<a href="/styles">
-						<div class="dot {% if page == 'styles' %} active {% endif %}">
-							<img src="/img/beer.svg" />
-						</div>
-					</a>
-					<a href="/hops">
-						<div class="dot {% if page == 'hops' %} active {% endif %}">
-							<img src="/img/hops.svg" />
-						</div>
-					</a>
-					<a href="/yeasts">
-						<div class="dot {% if page == 'yeasts' %} active {% endif %}">
-							<img src="/img/yeast.svg" />
-						</div>
-					</a>
-					<a href="grains">
-						<div class="dot {% if page == 'grains' %} active {% endif %}">
-							<img src="/img/grain.svg" />
-						</div>
-					</a>
-					<a href="/calculations">
-						<div class="dot {% if page == 'calculations' %} active {% endif %}">
-							<img src="/img/calculator.svg" />
-						</div>
-					</a>
-					<a href="/srms">
-						<div class="dot {% if page == 'srms' %} active {% endif %}">
-							<img src="/img/srm.svg" />
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-11 col-md-11">
-					{% block content %}{% endblock %}
-				</div>
-			</div>
+			{% block content %}{% endblock %}
 		</div>
 	</body>
 </html>
