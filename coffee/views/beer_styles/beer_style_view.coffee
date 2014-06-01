@@ -8,6 +8,10 @@ define (require) ->
 		events: {}
 
 		initialize: () ->
-      this.$el.append(_.template(viewtemplate))
-      return
+			self=this
+			beer_style.collection.fetch({
+				success: (collection, response, options) ->
+					self.$el.append(_.template(viewtemplate, collection))
+			})
+			return
   }

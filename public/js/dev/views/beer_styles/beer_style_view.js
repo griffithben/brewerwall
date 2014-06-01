@@ -8,7 +8,13 @@
       ui: {},
       events: {},
       initialize: function() {
-        this.$el.append(_.template(viewtemplate));
+        var self;
+        self = this;
+        beer_style.collection.fetch({
+          success: function(collection, response, options) {
+            return self.$el.append(_.template(viewtemplate, collection));
+          }
+        });
       }
     });
   });
