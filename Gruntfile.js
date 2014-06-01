@@ -10,6 +10,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-md5');
 
   // Project configuration.
@@ -19,6 +20,20 @@ module.exports = function(grunt) {
       css: {
         files: ['sass/*.scss','sass/*.sass', 'sass/**/*.scss','sass/**/*.sass'],
         tasks: ['compass'],
+        options: {
+          noLineComments: true,
+        },
+      },
+      coffee: {
+        files: ['coffee/**/*.coffee'],
+        tasks: ['coffee'],
+        options: {
+          noLineComments: true,
+        },
+      },
+      views: {
+        files: ['coffee/views/**/*.html'],
+        tasks: ['copy'],
         options: {
           noLineComments: true,
         },
@@ -43,6 +58,14 @@ module.exports = function(grunt) {
             'components/bootstrap/dist/css/bootstrap.css'
           ]
         }
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          // includes files within path and its sub-directories
+          {expand: true, cwd: 'coffee/', src: ['**/*.html'], dest: 'public/js/dev/'}
+        ]
       }
     },
     uglify: {
@@ -88,7 +111,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'coffee/',
         src: ['**/*.coffee'],
-        dest: 'public/js/dev/objects/',
+        dest: 'public/js/dev/',
         ext: '.js'
       }
     },

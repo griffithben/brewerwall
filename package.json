@@ -11,20 +11,21 @@
   "license": "BSD",
   "gitHead": "6e85653f3f130b2c6eed095991889179a13e868a",
   "devDependencies": {
-    "grunt-contrib-watch": "~0.4.4",
+    "backbone": "*",
     "grunt": "~0.4.1",
-    "grunt-contrib-sass": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.1",
-    "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-compass": "~0.2.0",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-cssmin": "~0.6.1",
-    "jquery": "*",
-    "underscore": "*",
-    "backbone": "*",
-    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-jshint": "~0.5.4",
     "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-contrib-watch": "~0.4.4",
     "grunt-md5": "~0.1.11",
-    "grunt-contrib-clean": "~0.5.0"
+    "jquery": "*",
+    "underscore": "*"
   }
 }

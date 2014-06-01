@@ -1,5 +1,21 @@
 {% extends "layout_secondary.html" %}
+{% block script%}
+<script>
+require(["views/beer_styles/beer_style_view"], function(BeerStyleView) {
+  // var publicController = new PublicController({
+  //   el: '#login-container',
+  //   code: code,
+  //   message: message
+  // });
+
+  var beerStyleView = new BeerStyleView({el: '#temp'});
+  //alert('asdf');
+});
+</script>
+{% endblock %}
+
 {% block content %}
+<div id="temp"></div>
 <div class="row">
   <div class="col-sm-9 col-md-9">
     <h2>Beer Styles</h2>
