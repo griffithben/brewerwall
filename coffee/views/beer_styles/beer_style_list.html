@@ -1,0 +1,32 @@
+<table class="table table-condensed small table-brewerwall-list">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Origin</td>
+      <td>ABV</td>
+      <td>IBU</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% _.each(models, function(model, key, list){ %>
+      <tr>
+        <td><%= model.get('name') %></td>
+        <td><%= model.get('origin') %></td>
+        <td>
+          <% if(model.get('abv_min') == 0 && model.get('abv_max') == 0) { %>
+            Any
+          <% } else { %>
+            <%= model.get('abv_min') %>&nbsp;-&nbsp;<%= model.get('abv_max') %>
+          <% } %>
+        </td>
+        <td>
+          <% if(model.get('ibu_min') == 0 && model.get('ibu_max') == 0) { %>
+            Any
+          <% } else { %>
+            <%= model.get('ibu_min') %>&nbsp;-&nbsp;<%= model.get('ibu_max') %>
+          <% } %>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

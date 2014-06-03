@@ -15,7 +15,11 @@ $app->get('/styles', function () use ($app, $adapter)  {
 
 $app->get('/api/beerstyles', function () use ($app, $adapter){
   $collection = new BeerStyleCollection($adapter);
-  echo json_encode($collection->all()->toArray());
+  $request = (object)$app->request->get();
+  if(empty($request))
+    echo json_encode($collection->all()->toArray());
+  else
+    echo json_encode($collection->fields($request)->toArray());
 });
 
 $app->get('/api/beerstyles/:id', function ($id) use ($app, $adapter){
