@@ -2,11 +2,11 @@
 {% block script%}
 <script>
 require(["views/beer_styles/beer_style_view"], function(BeerStyleView) {
-  var beerStyleView = new BeerStyleView({el: '#temp'});
+  var beerStyleView = new BeerStyleView({el: '#beerStyleView'});
 });
 </script>
 {% endblock %}
 
 {% block content %}
-<div id="temp"></div>
+<div id="beerStyleView"></div>
 {% endblock %}

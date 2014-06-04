@@ -1,0 +1,36 @@
+<table class="table table-condensed small table-brewerwall-list">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Lab</td>
+      <td>Attenuation</td>
+      <td>Temperature</td>
+      <td>Tolerance</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% _.each(models, function(model, key, list){ %>
+      <tr>
+        <td><%= model.get('name') %></td>
+        <td><%= model.get('laboratory') %></td>
+        <td>
+          <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
+            Any
+          <% } else { %>
+            <%= model.get('attenuation_min') %>&nbsp;-&nbsp;<%= model.get('attenuation_max') %>
+          <% } %>
+        </td>
+        <td>
+          <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
+            Any
+          <% } else { %>
+            <%= model.get('temperature_min') %>&nbsp;-&nbsp;<%= model.get('temperature_max') %>
+          <% } %>
+        </td>
+        <td>
+          <%= model.get('tolerance') %>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

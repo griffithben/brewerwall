@@ -1,10 +1,9 @@
 (function() {
   define(function(require) {
-    var BeerStyleView, LoginView, beer_style, listtemplate, viewtemplate;
+    var BeerStyleView, beer_style, listtemplate, viewtemplate;
     viewtemplate = require('text!views/beer_styles/beer_style_view.html');
     listtemplate = require('text!views/beer_styles/beer_style_list.html');
     beer_style = require('models/beer_style');
-    LoginView = {};
     return BeerStyleView = Backbone.View.extend({
       ui: {},
       events: {

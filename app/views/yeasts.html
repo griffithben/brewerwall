@@ -1,4 +1,12 @@
 {% extends "layout_secondary.html" %}
+{% block script%}
+<script>
+require(["views/yeasts/yeast_view"], function(YeastView) {
+  var yeastView = new YeastView({el: '#yeastView'});
+});
+</script>
+{% endblock %}
+
 {% block content %}
-Yeasts
+<div id="yeastView"></div>
 {% endblock %}

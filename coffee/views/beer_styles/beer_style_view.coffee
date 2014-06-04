@@ -2,7 +2,6 @@ define (require) ->
 	viewtemplate = require 'text!views/beer_styles/beer_style_view.html'
 	listtemplate = require 'text!views/beer_styles/beer_style_list.html'
 	beer_style = require 'models/beer_style'
-	LoginView = {}
 
 	BeerStyleView = Backbone.View.extend {
 		ui: {}

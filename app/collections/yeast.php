@@ -36,7 +36,7 @@ class YeastCollection extends AbstractCollection {
     if(isset($post->attenuation) && is_numeric($post->attenuation)){
       $select->where->nest->greaterThanOrEqualTo('attenuation_max', $post->attenuation)->lessThanOrEqualTo('attenuation_min', $post->attenuation)
         ->or->expression("(attenuation_max = 0 AND attenuation_min = 0)", null)
-        ->or->expression("(attenuation_max = attenuation_min AND attenuation_max != 0 AND attenuation_max <= ".$this->_adapter->platform->quoteValue($post->attenuation).")", null);
+        ->or->expression("(attenuation_max = attenuation_min AND attenuation_max != 0 AND attenuation_max >= ".$this->_adapter->platform->quoteValue($post->attenuation).")", null);
     }
 
     //Flocculation Property
@@ -47,7 +47,7 @@ class YeastCollection extends AbstractCollection {
     if(isset($post->temperature) && is_numeric($post->temperature)){
       $select->where->nest->greaterThanOrEqualTo('temperature_max', $post->temperature)->lessThanOrEqualTo('temperature_min', $post->temperature)
         ->or->expression("(temperature_max = 0 AND temperature_min = 0)", null)
-        ->or->expression("(temperature_max = temperature_min AND temperature_max != 0 AND temperature_max <= ".$this->_adapter->platform->quoteValue($post->temperature).")", null);
+        ->or->expression("(temperature_max = temperature_min AND temperature_max != 0 AND temperature_max >= ".$this->_adapter->platform->quoteValue($post->temperature).")", null);
     }
 
     //Tolerance Property
