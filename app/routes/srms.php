@@ -12,13 +12,16 @@ $app->get('/srms', function () use ($app, $adapter)  {
 
 
 // API
+$app->group('/api', function() use ($app, $adapter) {
 
-$app->get('/api/srms', function () use ($app, $adapter){
-  $collection = new SrmCollection($adapter);
-  echo json_encode($collection->all()->toArray());
-});
+  $app->get('/srms', function () use ($app, $adapter){
+    $collection = new SrmCollection($adapter);
+    echo json_encode($collection->all()->toArray());
+  });
 
-$app->get('/api/srms/:id', function ($id) use ($app, $adapter){
-  $collection = new SrmCollection($adapter);
-  echo json_encode($collection->id($id)->toArray());
+  $app->get('/srms/:id', function ($id) use ($app, $adapter){
+    $collection = new SrmCollection($adapter);
+    echo json_encode($collection->id($id)->toArray());
+  });
+
 });

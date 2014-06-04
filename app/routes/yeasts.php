@@ -6,18 +6,27 @@ $app->get('/yeasts', function () use ($app, $adapter)  {
   $app->render('yeasts.html', array('page'=>'yeasts'));
 });
 
-$app->get('/api/yeasts', function () use ($app, $adapter){
-  $collection = new YeastCollection($adapter);
-  echo json_encode($collection->all()->toArray());
-});
+// API
+$app->group('/api', function() use ($app, $adapter) {
 
-$app->get('/api/yeasts/:id', function ($id) use ($app, $adapter){
-  $collection = new YeastCollection($adapter);
-  echo json_encode($collection->id($id)->toArray());
-});
+  $app->get('/yeasts', function () use ($app, $adapter){
+    $collection = new YeastCollection($adapter);
+    $request = (object)$app->request->get();
+    if(empty($request))
+      echo json_encode($collection->all()->toArray());
+    else
+      echo json_encode($collection->fields($request)->toArray());
+  });
 
-$app->post('/api/yeasts', function () use ($app, $adapter){
-  $post = (object)$app->request->post();
-  $collection = new YeastCollection($adapter);
-  echo json_encode($collection->fields($post)->toArray());
+  $app->get('/yeasts/:id', function ($id) use ($app, $adapter){
+    $collection = new YeastCollection($adapter);
+    echo json_encode($collection->id($id)->toArray());
+  });
+
+  $app->post('/yeasts', function () use ($app, $adapter){
+    $post = (object)$app->request->post();
+    $collection = new YeastCollection($adapter);
+    echo json_encode($collection->fields($post)->toArray());
+  });
+
 });

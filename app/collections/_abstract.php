@@ -28,6 +28,7 @@ class AbstractCollection{
   protected function execute($statement){
     $selectString = $this->_sql->getSqlStringForSqlObject($statement);
     $adapter = $this->_adapter;
+    //echo $selectString;
     $results = $this->_adapter->query($selectString, $adapter::QUERY_MODE_EXECUTE);
     return $results;
   }
