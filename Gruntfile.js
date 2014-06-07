@@ -84,6 +84,7 @@ module.exports = function(grunt) {
           'public/js/dev/components/bootstrap.js':['components/bootstrap/dist/js/bootstrap.min.js'],
           'public/js/dev/components/require.js':['components/requirejs/require.js'],
           'public/js/dev/components/text.js':['components/requirejs-text/text.js'],
+          'public/js/dev/components/beercalc.js':['components/beercalc_js/src/beercalc.min.js'],
           'public/js/html5shiv.js':['components/html5shiv/dist/html5shiv.js'],
           'public/js/respond.js':['components/respond/src/respond.js']
         }
@@ -100,6 +101,7 @@ module.exports = function(grunt) {
           'public/js/components/bootstrap.js':['components/bootstrap/dist/js/bootstrap.min.js'],
           'public/js/components/require.js':['components/requirejs/require.js'],
           'public/js/components/text.js':['components/requirejs-text/text.js'],
+          'public/js/components/beercalc.js':['components/beercalc_js/src/beercalc.min.js'],
           'public/js/html5shiv.js':['components/html5shiv/dist/html5shiv.js'],
           'public/js/respond.js':['components/respond/src/respond.js']
         }
