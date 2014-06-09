@@ -4,6 +4,7 @@
     viewtemplate = require('text!views/beer_styles/beer_style_view.html');
     listtemplate = require('text!views/beer_styles/beer_style_list.html');
     beer_style = require('models/beer_style');
+    require('beercalc');
     return BeerStyleView = Backbone.View.extend({
       ui: {},
       events: {
@@ -27,6 +28,7 @@
             return self.ui.list.html(_.template(listtemplate, collection));
           }
         });
+        console.log(Beercalc.abv(1.080, 1.010));
       },
       onFilterChange: function() {
         var filterData, filterRequest, self;

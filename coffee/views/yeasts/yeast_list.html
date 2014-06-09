@@ -9,28 +9,34 @@
     </tr>
   </thead>
   <tbody>
-    <% _.each(models, function(model, key, list){ %>
+    <% if(models.length > 0) { %>
+      <% _.each(models, function(model, key, list){ %>
+        <tr>
+          <td><%= model.get('name') %></td>
+          <td><%= model.get('laboratory') %></td>
+          <td>
+            <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('attenuation_min') %>&nbsp;-&nbsp;<%= model.get('attenuation_max') %>
+            <% } %>
+          </td>
+          <td>
+            <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('temperature_min') %>&nbsp;-&nbsp;<%= model.get('temperature_max') %>
+            <% } %>
+          </td>
+          <td>
+            <%= model.get('tolerance') %>
+          </td>
+        </tr>
+      <% }); %>
+    <% } else { %>
       <tr>
-        <td><%= model.get('name') %></td>
-        <td><%= model.get('laboratory') %></td>
-        <td>
-          <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('attenuation_min') %>&nbsp;-&nbsp;<%= model.get('attenuation_max') %>
-          <% } %>
-        </td>
-        <td>
-          <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('temperature_min') %>&nbsp;-&nbsp;<%= model.get('temperature_max') %>
-          <% } %>
-        </td>
-        <td>
-          <%= model.get('tolerance') %>
-        </td>
+        <td colspan="5" class="empty">Nothing in our yeast repository match the filtered criteria.</td>
       </tr>
-    <% }); %>
+    <% } %>
   </tbody>
 </table>

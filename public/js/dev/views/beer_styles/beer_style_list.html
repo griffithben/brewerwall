@@ -10,39 +10,45 @@
     </tr>
   </thead>
   <tbody>
-    <% _.each(models, function(model, key, list){ %>
+    <% if(models.length > 0) { %>
+      <% _.each(models, function(model, key, list){ %>
+        <tr>
+          <td><%= model.get('name') %></td>
+          <td><%= model.get('origin') %></td>
+          <td>
+            <% if(model.get('abv_min') == 0 && model.get('abv_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('abv_min') %>&nbsp;-&nbsp;<%= model.get('abv_max') %>
+            <% } %>
+          </td>
+          <td>
+            <% if(model.get('ibu_min') == 0 && model.get('ibu_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('ibu_min') %>&nbsp;-&nbsp;<%= model.get('ibu_max') %>
+            <% } %>
+          </td>
+          <td>
+            <% if(model.get('og_min') == 0 && model.get('og_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('og_min') %>&nbsp;-&nbsp;<%= model.get('og_max') %>
+            <% } %>
+          </td>
+          <td>
+            <% if(model.get('fg_min') == 0 && model.get('fg_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('fg_min') %>&nbsp;-&nbsp;<%= model.get('fg_max') %>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    <% } else { %>
       <tr>
-        <td><%= model.get('name') %></td>
-        <td><%= model.get('origin') %></td>
-        <td>
-          <% if(model.get('abv_min') == 0 && model.get('abv_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('abv_min') %>&nbsp;-&nbsp;<%= model.get('abv_max') %>
-          <% } %>
-        </td>
-        <td>
-          <% if(model.get('ibu_min') == 0 && model.get('ibu_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('ibu_min') %>&nbsp;-&nbsp;<%= model.get('ibu_max') %>
-          <% } %>
-        </td>
-        <td>
-          <% if(model.get('og_min') == 0 && model.get('og_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('og_min') %>&nbsp;-&nbsp;<%= model.get('og_max') %>
-          <% } %>
-        </td>
-        <td>
-          <% if(model.get('fg_min') == 0 && model.get('fg_max') == 0) { %>
-            Any
-          <% } else { %>
-            <%= model.get('fg_min') %>&nbsp;-&nbsp;<%= model.get('fg_max') %>
-          <% } %>
-        </td>
+        <td colspan="6">Nothing in our style repository match the filtered criteria.</td>
       </tr>
-    <% }); %>
+    <% } %>
   </tbody>
 </table>
