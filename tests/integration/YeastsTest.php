@@ -58,7 +58,7 @@ class YeastsTest extends Slim_Framework_TestCase{
     $this->post('/api/yeasts', $parameters);
     $styles = json_decode($this->response->body());
     $this->assertEquals(200, $this->response->status());
-    $this->assertSame(55, count($styles));
+    $this->assertSame(58, count($styles));
   }
 
   public function testYeastsPostFlocculation(){
