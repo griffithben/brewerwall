@@ -1,0 +1,20 @@
+<table class="table table-condensed small table-brewerwall-list">
+  <thead>
+    <tr>
+      <td>Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% if(models.length > 0) { %>
+      <% _.each(models, function(model, key, list){ %>
+        <tr>
+          <td><%= model.get('name') %></td>
+        </tr>
+      <% }); %>
+    <% } else { %>
+      <tr>
+        <td colspan="5" class="empty">Nothing in our yeast repository match the filtered criteria.</td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

@@ -1,4 +1,12 @@
 {% extends "layout_secondary.html" %}
+{% block script%}
+<script>
+require(["views/hops/hop_view"], function(HopView) {
+  var hopView = new HopView({el: '#hopView'});
+});
+</script>
+{% endblock %}
+
 {% block content %}
-Hops
+<div id="hopView"></div>
 {% endblock %}
