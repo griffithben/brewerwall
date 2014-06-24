@@ -1,28 +1,12 @@
 {% extends "layout_secondary.html" %}
+{% block script%}
+<script>
+require(["views/srms/srm_view"], function(SRMView) {
+  var srmView = new SRMView({el: '#srmView'});
+});
+</script>
+{% endblock %}
+
 {% block content %}
-  <h2>SRM</h2>
-  <hr/>
-  {% for srm in srms %}<span class="srm-item" data-toggle="tooltip" data-placement="top" title="{{ srm.value }} | {{ srm.hex }}" style="background-color: {{ srm.hex }}; width: 2.5%; height: 30px; display: inline-block; margin: 0px;"></span>{% endfor %}
-  <script>$('.srm-item').tooltip();</script>
-  <hr/>
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <td>SRM</td>
-        <td>Hex</td>
-        <td>Color</td>
-      </tr>
-    </thead>
-    <tbody>
-      {% for srm in srms %}
-        <tr>
-          <td>{{ srm.value }}</td>
-          <td>{{ srm.hex }}</td>
-          <td><div class="srm" style="background-color: {{ srm.hex }}"></div></td>
-        </tr>
-      {% else %}
-          No users have been found.
-      {% endfor %}
-    </tbody>
-  </table>
+<div id="srmView"></div>
 {% endblock %}

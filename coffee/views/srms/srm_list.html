@@ -1,0 +1,7 @@
+<br/>
+<% _.each(models, function(model, key, list){ %>
+  <div class="srm">
+    <div class="srm-dot" style="background-color:<%= model.get('hex') %>"><%= model.get('value') %></div>
+    <label><%= model.get('hex') %></label>
+  </div>
+<% }); %>
