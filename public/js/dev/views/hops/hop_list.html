@@ -2,6 +2,9 @@
   <thead>
     <tr>
       <td>Name</td>
+      <td>Origin</td>
+      <td>Alpha</td>
+      <td>Beta</td>
     </tr>
   </thead>
   <tbody>
@@ -9,11 +12,14 @@
       <% _.each(models, function(model, key, list){ %>
         <tr>
           <td><%= model.get('name') %></td>
+          <td><%= model.get('origin') %></td>
+          <td><%= model.get('alpha_min') %> - <%= model.get('alpha_max') %></td>
+          <td><%= model.get('beta_min') %> - <%= model.get('beta_max') %></td>
         </tr>
       <% }); %>
     <% } else { %>
       <tr>
-        <td colspan="5" class="empty">Nothing in our yeast repository match the filtered criteria.</td>
+        <td colspan="5" class="empty">Nothing in our hop repository match the filtered criteria.</td>
       </tr>
     <% } %>
   </tbody>

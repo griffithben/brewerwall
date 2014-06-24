@@ -26,7 +26,7 @@ class HopCollection extends AbstractCollection {
 
     //Origin Property
     if(isset($post->origin) && is_string($post->origin))
-      $select->where->like("origin", "%".strtolower($post->origin)."%");
+      $select->where(array("origin"=>strtolower($post->origin)));
 
     //Type Property
     if(isset($post->type) && is_string($post->type))
