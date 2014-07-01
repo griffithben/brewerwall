@@ -4,7 +4,7 @@
       <h2>Hops</h2>
       <div class="form-group">
         <label>Alpha</label>
-        <select id="alpha" class="form-control input-sm">
+        <select id="alpha" class="form-control input-sm filter">
           <option value="0">Any</option>
           <% for (x = _i = 1; _i <= 23; x = _i+=.5) { %>
             <option value="<%= x %>"><%= x %></option>
@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
         <label>Beta</label>
-        <select id="beta" class="form-control input-sm">
+        <select id="beta" class="form-control input-sm filter">
           <option value="0">Any</option>
           <% for (x = _i = 1; _i <= 13; x = _i+=.25) { %>
             <option value="<%= x %>"><%= x %></option>
@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label>Origin</label>
-        <select id="origin" class="form-control input-sm">
+        <select id="origin" class="form-control input-sm filter">
           <option value="0">Any</option>
           <option value="Australian">Australian</option>
           <option value="Belgium">Belgium</option>

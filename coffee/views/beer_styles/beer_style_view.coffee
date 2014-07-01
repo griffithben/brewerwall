@@ -4,6 +4,16 @@ define (require) ->
 	beer_style = require 'models/beer_style'
 	require 'beercalc'
 
+	BeerStyleRouter = Backbone.Router.extend {
+		routes: {
+			"(/)": "filter",
+			":filter/:val(/)": "filter",
+			":filter/:val/:filter/:val(/)": "filter",
+			":filter/:val/:filter/:val/:filter/:val(/)": "filter"
+			":filter/:val/:filter/:val/:filter/:val/:filter/:val(/)": "filter"
+		}
+	}
+
 	BeerStyleView = Backbone.View.extend {
 		ui: {}
 		events: {
@@ -21,44 +31,68 @@ define (require) ->
 			this.ui.ibu = this.$el.find('#ibu')
 			this.ui.og = this.$el.find('#og')
 			this.ui.fg = this.$el.find('#fg')
+			this.ui.filters = this.$el.find('.filter')
 			this.ui.api_url = this.$el.find('#api-url')
-			beer_style.collection.fetch({
-				success: (collection, response, options) ->
-					self.ui.list.html(_.template(listtemplate, collection))
-			})
+
+			# Setup our router
+			this.router = new BeerStyleRouter;
+			this.router.on('route:filter', _.bind(this.filter, this))
+			Backbone.history.start()
+
 			console.log(Beercalc.abv(1.080, 1.010))
 			return
 
 		onFilterChange: () ->
+			navigate = []
+
+			if(this.ui.abv.val() != "0")
+				navigate.push("abv/"+encodeURIComponent(this.ui.abv.val()))
+
+			if(this.ui.ibu.val() != "0")
+				navigate.push("ibu/"+encodeURIComponent(this.ui.ibu.val()))
+
+			if(this.ui.og.val() != "0")
+				navigate.push("og/"+encodeURIComponent(this.ui.og.val()))
+
+			if(this.ui.fg.val() != "0")
+				navigate.push("fg/"+encodeURIComponent(this.ui.fg.val()))
+
+			this.router.navigate(navigate.join('/'), {trigger:true})
+
+			return
+
+		filter: () ->
 			self=this
+
+			# reset our filters
+			this.ui.filters.prop('selectedIndex', 0)
+
+			# Create our filter data.
 			filterData = {}
 			filterRequest = []
+			for e, i in arguments by 2
+				if !_.isEmpty(arguments[i])
+					filterData[arguments[i]] = arguments[i + 1]
+					if(!_.isUndefined(self.ui[arguments[i]]))
+						self.ui[arguments[i]].val(arguments[i + 1])
+						filterRequest.push(arguments[i]+'='+arguments[i+1])
 
-			if(self.ui.abv.val() != "0")
-				filterData.abv = self.ui.abv.val()
-				filterRequest.push('abv='+self.ui.abv.val())
+			# update our api endpoint
+			this.api(filterRequest);
 
-			if(self.ui.ibu.val() != "0")
-				filterData.ibu = self.ui.ibu.val()
-				filterRequest.push('ibu='+self.ui.ibu.val())
-
-			if(self.ui.og.val() != "0")
-				filterData.og = self.ui.og.val()
-				filterRequest.push('og='+self.ui.og.val())
-
-			if(self.ui.fg.val() != "0")
-				filterData.fg = self.ui.fg.val()
-				filterRequest.push('fg='+self.ui.fg.val())
-
-			if(_.isEmpty(filterRequest.join('&')))
-				this.ui.api_url.html('brewerwall.dev/api/beerstyles')
-			else
-				this.ui.api_url.html('brewerwall.dev/api/beerstyles?'+filterRequest.join('&'))
-
+			# Fetch our collection
 			beer_style.collection.fetch({
 				data: filterData,
 				success: (collection, response, options) ->
 					self.ui.list.html(_.template(listtemplate, collection))
 			})
+
 			return
+
+		api: (params) ->
+			# build our api endpoint.
+			if(_.isEmpty(params.join('&')))
+				this.ui.api_url.html('brewerwall.dev/api/beerstyles')
+			else
+				this.ui.api_url.html('brewerwall.dev/api/beerstyles?'+params.join('&'))
   }

@@ -142,7 +142,13 @@ header
     line-height: 50px
     cursor: pointer
     &:hover
-      border: 1px solid #7ab4c9
+      -moz-box-shadow: 1px 1px 2px #000
+      -webkit-box-shadow: 1px 1px 2px #000
+      box-shadow: 1px 1px 2px #000
+      /* For IE 8 */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')"
+      /* For IE 5.5 - 7 */
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')
 
 @media (max-width: 768px)
   ul.brew-nav

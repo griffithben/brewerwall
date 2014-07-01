@@ -4,7 +4,7 @@ use App\Collections\HopCollection;
 
 // VIEW
 
-$app->get('/hops', function () use ($app, $adapter)  {
+$app->get('/hops/*', function () use ($app, $adapter)  {
   $app->render('hops.html', array('page'=>'hops'));
 });
 

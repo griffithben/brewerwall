@@ -4,7 +4,7 @@
       <h2>Yeasts</h2>
       <div class="form-group">
         <label>Attenuation</label>
-        <select id="attenuation" class="form-control input-sm">
+        <select id="attenuation" class="form-control input-sm filter">
           <option value="0">Any</option>
           <% for (x = _i = 0; _i <= 100; x = ++_i) { %>
             <option value="<%= x %>"><%= x %></option>
@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
         <label>Temperature</label>
-        <select id="temperature" class="form-control input-sm">
+        <select id="temperature" class="form-control input-sm filter">
           <option value="0">Any</option>
           <% for (x = _i = 45; _i <= 95; x = ++_i) { %>
             <option value="<%= x %>"><%= x %></option>
@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <label>Tolerance</label>
-        <select id="tolerance" class="form-control input-sm">
+        <select id="tolerance" class="form-control input-sm filter">
           <option value="0">Any</option>
           <% for (x = _i = 1; _i <= 25; x = ++_i) { %>
             <option value="<%= x %>"><%= x %></option>
