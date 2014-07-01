@@ -1,6 +1,7 @@
 <?php
 use Zend\Db\Sql\Sql;
 use App\Collections\HopCollection;
+use App\Collections\HopSubstituteCollection;
 
 // VIEW
 
@@ -23,6 +24,11 @@ $app->group('/api', function() use ($app, $adapter) {
   $app->get('/hops/:id', function ($id) use ($app, $adapter){
     $collection = new HopCollection($adapter);
     echo json_encode($collection->id($id)->toArray());
+  });
+
+  $app->get('/hops/:id/substitutes', function ($id) use ($app, $adapter){
+    $collection = new HopSubstituteCollection($adapter);
+    echo json_encode($collection->hop($id)->toArray());
   });
 
   $app->post('/hops', function () use ($app, $adapter){
