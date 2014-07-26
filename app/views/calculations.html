@@ -1,4 +1,12 @@
 {% extends "layout_secondary.html" %}
+{% block script%}
+<script>
+require(["views/calculations/calculation_view"], function(CalculationView) {
+  var calculationView = new CalculationView({el: '#calculationView'});
+});
+</script>
+{% endblock %}
+
 {% block content %}
-Calculations
+<div id="calculationView"></div>
 {% endblock %}

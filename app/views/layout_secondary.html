@@ -39,7 +39,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="logo secondary">
-							<a href="/">
+							<a href="/" class="hidden-xs">
 								<div class="dot logo">
 									<img src="/img/logo.png"/>
 								</div>
@@ -48,7 +48,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<ul class="brew-nav secondary">
+						<ul class="brew-nav secondary hidden-xs">
 							<li><a href="/">home</a></li>
 							<li><a href="/docs">api docs</a></li>
 							<li><a href="/blog">blog</a></li>
@@ -60,6 +60,11 @@
 			<hr class="condensed"/>
 			<div class="row">
 				<div class="col-sm-1 col-md-1 center">
+					<a href="/" class="hidden-sm hidden-md hidden-lg">
+						<div class="dot logo">
+							<img src="/img/logo.png"/>
+						</div>
+					</a>
 					<a href="/styles">
 						<div class="dot {% if page == 'styles' %} active {% endif %}">
 							<img src="/img/beer.svg" />

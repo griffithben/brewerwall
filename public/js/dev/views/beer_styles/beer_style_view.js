@@ -4,7 +4,6 @@
     viewtemplate = require('text!views/beer_styles/beer_style_view.html');
     listtemplate = require('text!views/beer_styles/beer_style_list.html');
     beer_style = require('models/beer_style');
-    require('beercalc');
     BeerStyleRouter = Backbone.Router.extend({
       routes: {
         "(/)": "filter",
@@ -36,7 +35,6 @@
         this.router = new BeerStyleRouter;
         this.router.on('route:filter', _.bind(this.filter, this));
         Backbone.history.start();
-        console.log(Beercalc.abv(1.080, 1.010));
       },
       onFilterChange: function() {
         var navigate;
