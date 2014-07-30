@@ -1,10 +1,11 @@
 (function() {
   define(function(require) {
-    var ABV, ABW, Backbone, CalculationView, viewtemplate;
+    var ABV, ABW, Backbone, CalculationView, MCU, viewtemplate;
     Backbone = require('backbone');
     viewtemplate = require('text!views/calculations/calculation_view.html');
     ABV = require('views/calculations/abv/abv_view');
     ABW = require('views/calculations/abw/abw_view');
+    MCU = require('views/calculations/mcu/mcu_view');
     return CalculationView = Backbone.View.extend({
       ui: {},
       events: {
@@ -20,6 +21,9 @@
             el: this.$el
           }),
           abw: new ABW({
+            el: this.$el
+          }),
+          mcu: new MCU({
             el: this.$el
           })
         };
