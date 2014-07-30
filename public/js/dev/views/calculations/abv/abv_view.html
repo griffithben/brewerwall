@@ -1,8 +1,8 @@
-<div id="calculations" class="row calculation">
+<div id="abv" class="row calculation">
   <div class="col-sm-2 col-md-2 header">
     <div class="title">
       <h3>ABV</h3>
-      <p>Blerb about abv and what it means.</p>
+      <p>Percent of Alcohol by Volume</p>
     </div>
     <div class="links">
       <h6>CODE:</h6>
@@ -15,18 +15,18 @@
       <form class="form-horizontal" role="form">
         <div class="row">
           <div class="col-sm-6 col-md-6">
-            <label for="abv_og" class="control-label">OG</label>
-            <input type="text" class="form-control" id="abv_og" placeholder="OG">
+            <label for="abv-og" class="control-label">OG</label>
+            <input id="abv-og" type="text" class="form-control" placeholder="OG">
           </div>
           <div class="col-sm-6 col-md-6">
-            <label for="abv_fg" class="control-label">FG</label>
-            <input id="abv_fg" type="text" class="form-control" placeholder="FG">
+            <label for="abv-fg" class="control-label">FG</label>
+            <input id="abv-fg" type="text" class="form-control" placeholder="FG">
           </div>
         </div>
         <div class="row result">
           <div class="col-sm-12 col-md-12">
             <div class="result-display">
-              <span>(<span>1.080</span> - <span>1.020</span>) x 131 = <span id="result-value" class="result-value">7.9%</span></span>
+              <span>(<span class="abv-display-og">OG</span> - <span class="abv-display-fg">FG</span>) x 131 = <span id="abv-value" class="result-value">ABV</span></span>
             </div>
           </div>
         </div>

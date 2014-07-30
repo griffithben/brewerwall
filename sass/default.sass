@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
 
 .headline
   text-align: center
-  background-image: url('/img/000000_20.png')
+  background-image: url('/img/opacity_20.png')
 
 a
   color: #ffbc2f
@@ -30,15 +30,23 @@ a
       text-decoration: none !important
 
 div.card
-  background-color: #4b6169
   min-height: 180px
   width: 100%
   text-align: center
   padding: 20px 5px 5px 5px
-  border-bottom: solid 4px #2c3237
   cursor: pointer
+
+  transition: background-color .1s ease-in
+  -moz-transition: background-color .1s ease-in
+  -webkit-transition: background-color .1s ease-in
+
   &:hover
-    background-color: #577f8e
+    // background-image: url('/img/opacity_20.png')
+    background-color: rgba(0, 0, 0, 0.2)
+    transition: background-color .1s ease-in
+    -moz-transition: background-color .1s ease-in
+    -webkit-transition: background-color .1s ease-in
+
   img
     width: 80px
     color: black
@@ -53,6 +61,9 @@ div.dot
     padding-top: 11px
   &.active, &:hover
     background-color: #577f8e
+    transition: background-color .1s ease-in
+    -moz-transition: background-color .1s ease-in
+    -webkit-transition: background-color .1s ease-in
   &.logo
     padding: 0px
     img
@@ -61,6 +72,9 @@ div.dot
   height: 60px
   padding-top: 15px
   background-color: #4b6169
+  transition: background-color .1s ease-in
+  -moz-transition: background-color .1s ease-in
+  -webkit-transition: background-color .1s ease-in
   -moz-border-radius: 30px
   border-radius: 30px
   text-align: center
