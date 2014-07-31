@@ -6,6 +6,9 @@ define (require) ->
   ABV = require 'views/calculations/abv/abv_view'
   ABW = require 'views/calculations/abw/abw_view'
   MCU = require 'views/calculations/mcu/mcu_view'
+  SRM = require 'views/calculations/srm/srm_view'
+  AAU = require 'views/calculations/aau/aau_view'
+  IBU = require 'views/calculations/ibu/ibu_view'
 
   CalculationView = Backbone.View.extend {
     ui: {}
@@ -25,6 +28,9 @@ define (require) ->
         abv : new ABV({el:this.$el})
         abw : new ABW({el:this.$el})
         mcu : new MCU({el:this.$el})
+        srm : new SRM({el:this.$el})
+        aau : new AAU({el:this.$el})
+        ibu : new IBU({el:this.$el})
       }
 
       # Show our default item

@@ -1,0 +1,40 @@
+<div id="srm" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>SRM</h3>
+      <p>Standard Reference Method</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <label for="srm-weight" class="control-label">Weight (lbs)</label>
+            <input id="srm-weight" type="text" class="form-control" placeholder="Weight">
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <label for="srm-lovibond" class="control-label">Lovibond</label>
+            <input id="srm-lovibond" type="text" class="form-control" placeholder="Lovibond">
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <label for="srm-volume" class="control-label">Volume (gal)</label>
+            <input id="srm-volume" type="text" class="form-control" placeholder="Volume">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display">
+              <span>1.4922 x ((<span class="mcu-display-weight">Weight</span> * <span class="mcu-display-lovibond">Lovibond</span>) / <span class="mcu-display-volume">Volume</span>) ^ 0.6859) = <span id="srm-value" class="result-value">SRM</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
