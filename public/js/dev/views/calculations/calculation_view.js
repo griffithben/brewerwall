@@ -1,6 +1,6 @@
 (function() {
   define(function(require) {
-    var AAU, ABV, ABW, Backbone, CalculationView, IBU, MCU, SRM, viewtemplate;
+    var AAU, ABV, ABW, Backbone, CalculationRouter, CalculationView, IBU, MCU, SRM, viewtemplate;
     Backbone = require('backbone');
     viewtemplate = require('text!views/calculations/calculation_view.html');
     ABV = require('views/calculations/abv/abv_view');
@@ -9,6 +9,11 @@
     SRM = require('views/calculations/srm/srm_view');
     AAU = require('views/calculations/aau/aau_view');
     IBU = require('views/calculations/ibu/ibu_view');
+    CalculationRouter = Backbone.Router.extend({
+      routes: {
+        ":calculation": "filter"
+      }
+    });
     return CalculationView = Backbone.View.extend({
       ui: {},
       events: {
@@ -40,10 +45,19 @@
           })
         };
         this.calculations.abv.show();
+        this.router = new CalculationRouter;
+        this.router.on('route:filter', _.bind(this.filter, this));
+        Backbone.history.start();
       },
       onCalculationChange: function(e) {
+        this.router.navigate(this.ui.calculation_list.val(), {
+          trigger: true
+        });
+      },
+      filter: function() {
         this.hideAllCalculations();
-        this.showCalculation(this.ui.calculation_list.val());
+        this.showCalculation(arguments[0]);
+        this.ui.calculation_list.val(arguments[0]);
       },
       showCalculation: function(id) {
         this.calculations[id].show();

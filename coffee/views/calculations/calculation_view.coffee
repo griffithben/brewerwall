@@ -10,6 +10,12 @@ define (require) ->
   AAU = require 'views/calculations/aau/aau_view'
   IBU = require 'views/calculations/ibu/ibu_view'
 
+  CalculationRouter = Backbone.Router.extend {
+    routes: {
+      ":calculation":"filter"
+    }
+  }
+
   CalculationView = Backbone.View.extend {
     ui: {}
     events: {
@@ -35,11 +41,21 @@ define (require) ->
 
       # Show our default item
       this.calculations.abv.show()
+
+      # Setup our router
+      this.router = new CalculationRouter;
+      this.router.on('route:filter', _.bind(this.filter, this))
+      Backbone.history.start()
       return
 
     onCalculationChange: (e) ->
+      this.router.navigate(this.ui.calculation_list.val(), {trigger:true})
+      return
+
+    filter: () ->
       this.hideAllCalculations()
-      this.showCalculation(this.ui.calculation_list.val())
+      this.showCalculation(arguments[0])
+      this.ui.calculation_list.val(arguments[0])
       return
 
     showCalculation: (id) ->
