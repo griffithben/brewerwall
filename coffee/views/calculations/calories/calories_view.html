@@ -1,0 +1,36 @@
+<div id="calories" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>Calories</h3>
+      <p>Calories in 12oz of beer</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <label for="calories-og" class="control-label">OG</label>
+            <input id="calories-og" type="text" class="form-control" placeholder="OG">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <label for="calories-fg" class="control-label">FG</label>
+            <input id="calories-fg" type="text" class="form-control" placeholder="FG">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display">
+              <span>((6.9 x ABW(<span class="calories-display-og">OG</span>, <span class="calories-display-fg">FG</span>)) + 4 x (RealExtract(<span class="calories-display-og">OG</span>, <span class="calories-display-fg">FG</span>) - 0.1)) x <span class="calories-display-fg">FG</span> x 3.55 = <span id="calories-value" class="result-value">Calories</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

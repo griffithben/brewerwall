@@ -1,0 +1,36 @@
+<div id="real_extract" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>Real Extract</h3>
+      <p>Real Extract of Wort?</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <label for="real_extract-og" class="control-label">OG</label>
+            <input id="real_extract-og" type="text" class="form-control" placeholder="OG">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <label for="real_extract-fg" class="control-label">FG</label>
+            <input id="real_extract-fg" type="text" class="form-control" placeholder="FG">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display">
+              <span>(0.1808 x Plato(<span class="real_extract-display-og">OG</span>)) + (0.8192 x Plato(<span class="real_extract-display-fg">FG</span>)) = <span id="real_extract-value" class="result-value">Real Extract</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

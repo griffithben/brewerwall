@@ -1,6 +1,6 @@
 (function() {
   define(function(require) {
-    var AAU, ABV, ABW, Backbone, CalculationRouter, CalculationView, IBU, MCU, SRM, viewtemplate;
+    var AAU, ABV, ABW, Backbone, CalculationRouter, CalculationView, Calories, IBU, MCU, Plato, RealExtract, SRM, Utilization, viewtemplate;
     Backbone = require('backbone');
     viewtemplate = require('text!views/calculations/calculation_view.html');
     ABV = require('views/calculations/abv/abv_view');
@@ -9,6 +9,10 @@
     SRM = require('views/calculations/srm/srm_view');
     AAU = require('views/calculations/aau/aau_view');
     IBU = require('views/calculations/ibu/ibu_view');
+    Utilization = require('views/calculations/utilization/utilization_view');
+    Plato = require('views/calculations/plato/plato_view');
+    RealExtract = require('views/calculations/real_extract/real_extract_view');
+    Calories = require('views/calculations/calories/calories_view');
     CalculationRouter = Backbone.Router.extend({
       routes: {
         ":calculation": "filter"
@@ -41,6 +45,18 @@
             el: this.$el
           }),
           ibu: new IBU({
+            el: this.$el
+          }),
+          utilization: new Utilization({
+            el: this.$el
+          }),
+          plato: new Plato({
+            el: this.$el
+          }),
+          real_extract: new RealExtract({
+            el: this.$el
+          }),
+          calories: new Calories({
             el: this.$el
           })
         };

@@ -9,6 +9,10 @@ define (require) ->
   SRM = require 'views/calculations/srm/srm_view'
   AAU = require 'views/calculations/aau/aau_view'
   IBU = require 'views/calculations/ibu/ibu_view'
+  Utilization = require 'views/calculations/utilization/utilization_view'
+  Plato = require 'views/calculations/plato/plato_view'
+  RealExtract = require 'views/calculations/real_extract/real_extract_view'
+  Calories = require 'views/calculations/calories/calories_view'
 
   CalculationRouter = Backbone.Router.extend {
     routes: {
@@ -37,6 +41,10 @@ define (require) ->
         srm : new SRM({el:this.$el})
         aau : new AAU({el:this.$el})
         ibu : new IBU({el:this.$el})
+        utilization : new Utilization({el:this.$el})
+        plato : new Plato({el:this.$el})
+        real_extract : new RealExtract({el:this.$el})
+        calories : new Calories({el:this.$el})
       }
 
       # Show our default item
