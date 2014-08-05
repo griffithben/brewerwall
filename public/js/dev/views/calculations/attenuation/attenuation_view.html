@@ -1,0 +1,36 @@
+<div id="attenuation" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>Attenuation</h3>
+      <p>Attenuation of yeast</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <label for="attenuation-og" class="control-label">OG</label>
+            <input id="attenuation-og" type="text" class="form-control" placeholder="OG">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <label for="attenuation-fg" class="control-label">FG</label>
+            <input id="attenuation-fg" type="text" class="form-control" placeholder="FG">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display">
+              <span>(<span class="attenuation-display-og">OG</span> - <span class="attenuation-display-fg">FG</span>)/(<span class="attenuation-display-og">OG</span> - 1) = <span id="attenuation-value" class="result-value">Attenuation</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,8 @@ define (require) ->
   Plato = require 'views/calculations/plato/plato_view'
   RealExtract = require 'views/calculations/real_extract/real_extract_view'
   Calories = require 'views/calculations/calories/calories_view'
+  Attenuation = require 'views/calculations/attenuation/attenuation_view'
+  GU = require 'views/calculations/gu/gu_view'
 
   CalculationRouter = Backbone.Router.extend {
     routes: {
@@ -45,6 +47,8 @@ define (require) ->
         plato : new Plato({el:this.$el})
         real_extract : new RealExtract({el:this.$el})
         calories : new Calories({el:this.$el})
+        attenuation : new Attenuation({el:this.$el})
+        gu : new GU({el:this.$el})
       }
 
       # Show our default item
