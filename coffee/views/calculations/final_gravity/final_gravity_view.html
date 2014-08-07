@@ -1,8 +1,8 @@
-<div id="srm" class="row calculation">
+<div id="fg" class="row calculation">
   <div class="col-sm-2 col-md-2 header">
     <div class="title">
-      <h3>SRM</h3>
-      <p>Standard Reference Method</p>
+      <h3>Final Gravity</h3>
+      <p>Expected Final Gravity After Boil</p>
     </div>
     <div class="links">
       <h6>CODE:</h6>
@@ -15,22 +15,22 @@
       <form class="form-horizontal" role="form">
         <div class="row">
           <div class="col-sm-4 col-md-4">
-            <label for="srm-weight" class="control-label">Weight (lbs)</label>
-            <input id="srm-weight" type="text" class="form-control" placeholder="Weight">
+            <label for="fg-g" class="control-label">Specific Gravity</label>
+            <input id="fg-g" type="text" class="form-control" placeholder="Specific Gravity">
           </div>
           <div class="col-sm-4 col-md-4">
-            <label for="srm-lovibond" class="control-label">Lovibond</label>
-            <input id="srm-lovibond" type="text" class="form-control" placeholder="Lovibond">
+            <label for="fg-vol_beg" class="control-label">Volume Beginning (gal)</label>
+            <input id="fg-vol_beg" type="text" class="form-control" placeholder="Volume Beginning">
           </div>
           <div class="col-sm-4 col-md-4">
-            <label for="srm-volume" class="control-label">Volume (gal)</label>
-            <input id="srm-volume" type="text" class="form-control" placeholder="Volume">
+            <label for="fg-vol_end" class="control-label">Volume End (gal)</label>
+            <input id="fg-vol_end" type="text" class="form-control" placeholder="Volume End">
           </div>
         </div>
         <div class="row result">
           <div class="col-sm-12 col-md-12">
             <div class="result-display">
-              <span>1.4922 x ((<span class="srm-display-weight">Weight</span> * <span class="srm-display-lovibond">Lovibond</span>) / <span class="srm-display-volume">Volume</span>) ^ 0.6859) = <span id="srm-value" class="result-value">SRM</span></span>
+              <span>Total Gravity(<span class="fg-display-g">Gravity</span>, <span class="fg-display-vol_beg">Volume Beginning</span>) / <span class="fg-display-vol_end">Volume End</span> = <span id="fg-value" class="result-value">Final Gravity</span></span>
             </div>
           </div>
         </div>

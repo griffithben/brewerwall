@@ -27,7 +27,7 @@
           this.ui.display_g.html(this.ui.g.val());
           this.ui.result_value.html(Beercalc.gu(this.ui.g.val()) + " Units");
         } else {
-          this.ui.display_g.html('G');
+          this.ui.display_g.html('Gravity');
           this.ui.result_value.html('Gravity Units');
         }
       },
