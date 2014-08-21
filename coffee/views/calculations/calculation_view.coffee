@@ -17,6 +17,7 @@ define (require) ->
   GU = require 'views/calculations/gu/gu_view'
   TotalGravity = require 'views/calculations/total_gravity/total_gravity_view'
   FinalGravity = require 'views/calculations/final_gravity/final_gravity_view'
+  ExtractAddition = require 'views/calculations/extract_addition/extract_addition_view'
 
   CalculationRouter = Backbone.Router.extend {
     routes: {
@@ -53,6 +54,7 @@ define (require) ->
         gu : new GU({el:this.$el})
         tg : new TotalGravity({el:this.$el})
         fg : new FinalGravity({el:this.$el})
+        ea : new ExtractAddition({el:this.$el})
       }
 
       # Show our default item

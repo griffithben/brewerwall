@@ -1,6 +1,6 @@
 (function() {
   define(function(require) {
-    var AAU, ABV, ABW, Attenuation, Backbone, CalculationRouter, CalculationView, Calories, FinalGravity, GU, IBU, MCU, Plato, RealExtract, SRM, TotalGravity, Utilization, viewtemplate;
+    var AAU, ABV, ABW, Attenuation, Backbone, CalculationRouter, CalculationView, Calories, ExtractAddition, FinalGravity, GU, IBU, MCU, Plato, RealExtract, SRM, TotalGravity, Utilization, viewtemplate;
     Backbone = require('backbone');
     viewtemplate = require('text!views/calculations/calculation_view.html');
     ABV = require('views/calculations/abv/abv_view');
@@ -17,6 +17,7 @@
     GU = require('views/calculations/gu/gu_view');
     TotalGravity = require('views/calculations/total_gravity/total_gravity_view');
     FinalGravity = require('views/calculations/final_gravity/final_gravity_view');
+    ExtractAddition = require('views/calculations/extract_addition/extract_addition_view');
     CalculationRouter = Backbone.Router.extend({
       routes: {
         ":calculation": "filter"
@@ -73,6 +74,9 @@
             el: this.$el
           }),
           fg: new FinalGravity({
+            el: this.$el
+          }),
+          ea: new ExtractAddition({
             el: this.$el
           })
         };

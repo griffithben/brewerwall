@@ -1,0 +1,40 @@
+<div id="ea" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>Extract Addition</h3>
+      <p>Extract to add when short on gravityl</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <label for="ea-target_gu" class="control-label">Target Gravity</label>
+            <input id="ea-target_gu" type="text" class="form-control" placeholder="Target Gravity">
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <label for="ea-total_gu" class="control-label">Total Gravity</label>
+            <input id="ea-total_gu" type="text" class="form-control" placeholder="Total Gravity">
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <label for="ea-extract_type" class="control-label">Extract Type</label>
+            <input id="ea-extract_type" type="text" class="form-control" placeholder="Extract Type">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display">
+              <span>(<span class="ea-display-target_gu">Target Gravity</span> - <span class="ea-display-total_gu">Total Gravity</span>) / <span class="ea-display-extract_type">Extract</span> = <span id="ea-value" class="result-value">Extract Addition</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

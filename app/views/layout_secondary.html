@@ -60,36 +60,38 @@
 			<hr class="condensed"/>
 			<div class="row">
 				<div class="col-sm-1 col-md-1 center">
-					<a href="/" class="hidden-sm hidden-md hidden-lg">
-						<div class="dot logo">
-							<img src="/img/logo.png"/>
-						</div>
-					</a>
-					<a href="/styles">
-						<div class="dot {% if page == 'styles' %} active {% endif %}">
-							<img src="/img/beer.svg" />
-						</div>
-					</a>
-					<a href="/hops">
-						<div class="dot {% if page == 'hops' %} active {% endif %}">
-							<img src="/img/hops.svg" />
-						</div>
-					</a>
-					<a href="/yeasts">
-						<div class="dot {% if page == 'yeasts' %} active {% endif %}">
-							<img src="/img/yeast.svg" />
-						</div>
-					</a>
-					<a href="/calculations">
-						<div class="dot {% if page == 'calculations' %} active {% endif %}">
-							<img src="/img/calculator.svg" />
-						</div>
-					</a>
-					<a href="/srms">
-						<div class="dot {% if page == 'srms' %} active {% endif %}">
-							<img src="/img/srm.svg" />
-						</div>
-					</a>
+					<div>
+						<a href="/" class="hidden-sm hidden-md hidden-lg">
+							<div class="dot logo">
+								<img src="/img/logo.png"/>
+							</div>
+						</a>
+						<a href="/styles">
+							<div class="dot {% if page == 'styles' %} active {% endif %}">
+								<img src="/img/beer.svg" />
+							</div>
+						</a>
+						<a href="/hops">
+							<div class="dot {% if page == 'hops' %} active {% endif %}">
+								<img src="/img/hops.svg" />
+							</div>
+						</a>
+						<a href="/yeasts">
+							<div class="dot {% if page == 'yeasts' %} active {% endif %}">
+								<img src="/img/yeast.svg" />
+							</div>
+						</a>
+						<a href="/calculations">
+							<div class="dot {% if page == 'calculations' %} active {% endif %}">
+								<img src="/img/calculator.svg" />
+							</div>
+						</a>
+						<a href="/srms">
+							<div class="dot {% if page == 'srms' %} active {% endif %}">
+								<img src="/img/srm.svg" />
+							</div>
+						</a>
+					</div>
 				</div>
 				<div class="col-sm-11 col-md-11">
 					{% block content %}{% endblock %}
