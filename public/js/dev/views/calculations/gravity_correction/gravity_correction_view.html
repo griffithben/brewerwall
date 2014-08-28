@@ -1,0 +1,36 @@
+<div id="gc" class="row calculation">
+  <div class="col-sm-2 col-md-2 header">
+    <div class="title">
+      <h3>Gravity Correction</h3>
+      <p>Gravity correction for wort temperature</p>
+    </div>
+    <div class="links">
+      <h6>CODE:</h6>
+      <p><a href="https://github.com/brewerwall/beercalc_php" target="_blank">PHP</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_js" target="_blank">JS</a>&nbsp;-&nbsp;<a href="https://github.com/brewerwall/beercalc_ruby" target="_blank">RUBY</a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="col-sm-10 col-md-10">
+    <div class="well well-dark">
+      <form class="form-horizontal" role="form">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <label for="gc-temp" class="control-label">Temperature (F&deg;)</label>
+            <input id="gc-temp" type="text" class="form-control" placeholder="Temperature">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <label for="gc-g" class="control-label">Gravity</label>
+            <input id="gc-g" type="text" class="form-control" placeholder="Gravity">
+          </div>
+        </div>
+        <div class="row result">
+          <div class="col-sm-12 col-md-12">
+            <div class="result-display small">
+              <span>((1.313454 - 0.132674 x <span class="gc-display-temp">Temperature</span> + 2.057793 x 10^-3 x <span class="gc-display-temp">Temperature</span>^2 - 2.627634 x 10^-6 x <span class="gc-display-temp">Temperature</span>^3) x 0.001) + <span class="gc-display-g">g</span> = <span id="gc-value" class="result-value">Gravity</span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
