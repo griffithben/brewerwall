@@ -146,37 +146,44 @@ header
       margin: 0px 3px
     select
       width: 80px
-.srm
+
+.srm-container
+  perspective: 1000
   display: inline-block
-  text-align: center
-  margin: 0px
   width: 70px
-  .srm-dot
-    width: 50px
-    height: 50px
-    -moz-border-radius: 15px
-    border-radius: 15px
-    margin: auto auto 4px auto
-    cursor: pointer
-    padding-top: 10px
-    span
-      background-color: #1e1e1e
-      -moz-border-radius: 15px
-      border-radius: 15px
-      display: block
-      height: 30px
-      width: 30px
-      margin: auto
-      line-height: 30px
-      opacity: .85
-    &:hover
-      -moz-box-shadow: 1px 1px 2px #000
-      -webkit-box-shadow: 1px 1px 2px #000
-      box-shadow: 1px 1px 2px #000
-      /* For IE 8 */
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')"
-      /* For IE 5.5 - 7 */
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')
+  margin: 3px 4px
+  &:hover, &.hover
+    .srm
+      transform: rotateY(180deg)
+  .srm
+    transition: 0.6s
+    transform-style: preserve-3d
+    position: relative
+    .front, .back
+      backface-visibility: hidden
+      position: absolute
+      top: 0
+      left: 0
+      text-align: center
+      -moz-border-radius: 5px
+      border-radius: 5px
+      label
+        display: block
+        background-color: #eee
+        color: #222
+        -moz-top-left-border-radius: 5px
+        border-top-left-radius: 5px
+        -moz-top-right-border-radius: 5px
+        border-top-right-radius: 5px
+        margin-bottom: 15px
+    .front
+      z-index: 2
+    .back
+      transform: rotateY(180deg)
+
+.srm-container, .front, .back
+  width: 70px
+  height: 70px
 
 .calculation
   .header

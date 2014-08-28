@@ -1,7 +1,15 @@
 <br/>
 <% _.each(models, function(model, key, list){ %>
-  <div class="srm">
-    <div class="srm-dot" style="background-color:<%= model.get('hex') %>"><span><%= model.get('value') %></span></div>
-    <label><%= model.get('hex') %></label>
+  <div class="srm-container">
+    <div class="srm">
+      <div class="front" style="background-color: <%= model.get('hex') %>">
+        <label>SRM</label>
+        <%= model.get('value') %>
+      </div>
+      <div class="back" style="background-color: <%= model.get('hex') %>">
+        <label>HEX</label>
+        <%= model.get('hex') %>
+      </div>
+    </div>
   </div>
 <% }); %>
