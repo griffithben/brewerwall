@@ -16,7 +16,7 @@
             {{ hop.type }}
           {% endif %}</h6>
         </span>
-        <span class="label label-default pull-right">
+        <span class="label label-info pull-right">
           <h6>{{ hop.origin }}</h6>
         </span>
       </div>
