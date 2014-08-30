@@ -9,14 +9,14 @@
     <div class="secondary-header">
       <h2>{{ hop.name }}</h2>
       <div class="secondary-subset pull-right">
-        <span class="label label-default pull-right">
+        <span class="label label-success pull-right">
           <h6>{% if hop.type == 'Both' %}
             Aroma & Bittering
           {% else %}
             {{ hop.type }}
           {% endif %}</h6>
         </span>
-        <span class="label label-info pull-right">
+        <span class="label label-primary pull-right">
           <h6>{{ hop.origin }}</h6>
         </span>
       </div>
@@ -26,7 +26,7 @@
     </div>
   </div>
 </div>
-
+<hr/>
 <div class="row">
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Alpha</label>
@@ -64,15 +64,36 @@
     <p>{{ hop.caryophyllene_min }}% - {{ hop.caryophyllene_max }}%</p>
   </div>
 </div>
-
+<hr/>
 <div class="row">
   <div class="col-sm-3 col-md-3">
     <label class="bold">Aroma</label>
     <p>{{ hop.aroma }}</p>
   </div>
-  <div class="col-sm-9 col-md-9">
+  <div class="col-sm-3 col-md-3">
+    <label class="bold">Styles</label>
+    <p>{{ hop.styles }}</p>
+  </div>
+  <div class="col-sm-3 col-md-3">
+    <label class="bold">Storage</label>
+    <p>{{ hop.storage }}</p>
+  </div>
+  <div class="col-sm-3 col-md-3">
+    <label class="bold">Source</label>
+    <p>{{ hop.source }}</p>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
     <label class="bold">Description</label>
     <p>{{ hop.description }}</p>
+    <label class="bold">Substitutes</label>
+    <p>
+      {% for substitute in substitutes %}
+        <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a> |
+      {% endfor %}
+    </p>
   </div>
 </div>
 

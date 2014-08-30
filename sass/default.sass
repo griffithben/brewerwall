@@ -166,7 +166,6 @@ header
 .srm-container
   perspective: 1000
   display: inline-block
-  width: 70px
   margin: 3px 4px
   &:hover, &.hover
     .srm
@@ -185,8 +184,6 @@ header
       border-radius: 5px
       label
         display: block
-        background-color: #eee
-        color: #222
         -moz-top-left-border-radius: 5px
         border-top-left-radius: 5px
         -moz-top-right-border-radius: 5px
@@ -194,8 +191,15 @@ header
         margin-bottom: 15px
     .front
       z-index: 2
+      label
+        background-color: #eee
+        color: #222
     .back
       transform: rotateY(180deg)
+      background-color: #eee
+      color: #333
+      label
+        color: white
 
 .srm-container, .front, .back
   width: 70px
@@ -242,14 +246,16 @@ header
     text-align: center !important
 
   div.dot
-    width: 50px
-    height: 50px
+    width: 40px
+    height: 40px
     padding-top: 10px
     &.active
       padding-top: 6px
     &.logo
       img
-        width: 50px
+        width: 40px
+    img
+      width: 20px
 
   .calculation
     .header

@@ -12,7 +12,9 @@ $app->get('/hops/*', function () use ($app, $adapter)  {
 $app->get('/hops/:id', function ($id) use ($app, $adapter)  {
   $collection = new HopCollection($adapter);
   $hop = $collection->id($id)->toArray();
-  $app->render('hop.php', array('page'=>'hops', 'hop'=>$hop[0]));
+  $collection = new HopSubstituteCollection($adapter);
+  $substitutes = $collection->hop($id)->toArray();
+  $app->render('hop.php', array('page'=>'hops', 'hop'=>$hop[0], 'substitutes'=>$substitutes));
 });
 
 
