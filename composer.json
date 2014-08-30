@@ -9,11 +9,13 @@
         "zendframework/zend-db": "2.1.6",
         "shuber/curl": "dev-master",
         "phpunit/phpunit": "3.7.32",
-        "brewerwall/beercalc_php": "dev-master"
+        "brewerwall/beercalc_php": "dev-master",
+        "vlucas/phpdotenv": "*"
     },
     "require-dev": {
         "robmorgan/phinx": "*",
-	"slim/slim": "2.*"
+	      "slim/slim": "2.*",
+        "heroku/heroku-buildpack-php": "*"
     },
     "license": "BSD",
     "authors": [

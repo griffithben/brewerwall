@@ -1,15 +1,19 @@
 <?php
 
-require_once __DIR__ . '/../config/config.php';
 use Zend\Db\Sql\Sql;
 
+if(null == getenv("ENVIRONMENT")){
+  Dotenv::load(__DIR__.'/../');
+}
+$mysql = parse_url(getenv(getenv("ENVIRONMENT")."_DATABASE_URL"));
+
 $adapter = new Zend\Db\Adapter\Adapter(array(
-  'driver' => Config::DB_DRIVER,
-  'database' => Config::DB_SCHEMA,
-  'username' => Config::DB_USER,
-  'password' => Config::DB_PASSWORD,
-  'hostname' => Config::DB_HOST,
-  'charset'  => Config::DB_CHARSET
+  'driver' => 'Mysqli',
+  'database' => substr($mysql["path"],1),
+  'username' => $mysql["user"],
+  'password' => $mysql["pass"],
+  'hostname' => $mysql["host"],
+  'charset'  => 'utf8'
  ));
 
 // Prepare view

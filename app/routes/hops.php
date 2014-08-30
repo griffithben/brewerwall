@@ -9,6 +9,12 @@ $app->get('/hops/*', function () use ($app, $adapter)  {
   $app->render('hops.html', array('page'=>'hops'));
 });
 
+$app->get('/hops/:id', function ($id) use ($app, $adapter)  {
+  $collection = new HopCollection($adapter);
+  $hop = $collection->id($id)->toArray();
+  $app->render('hop.php', array('page'=>'hops', 'hop'=>$hop[0]));
+});
+
 
 // API
 $app->group('/api', function() use ($app, $adapter) {

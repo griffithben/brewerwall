@@ -134,9 +134,10 @@ header
   h1, h2, h3, h4, h5, h6, div.form-group, label, select
     display: inline-block
 
-  h2:first-child
-    border-right: 1px solid white
-    padding-right: 14px
+  &.with-bar
+    h2:first-child
+      border-right: 1px solid white
+      padding-right: 14px
 
   div.form-group
     vertical-align: super
@@ -146,6 +147,21 @@ header
       margin: 0px 3px
     select
       width: 80px
+  .secondary-subset
+    display: inline-block
+    margin-top: 20px
+    span.label
+      margin: 0px 4px
+      -moz-box-shadow: 1px 1px 2px #222222
+      -webkit-box-shadow: 1px 1px 2px #222222
+      box-shadow: 1px 1px 2px #222222
+      /* For IE 8 */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#222222')"
+      /* For IE 5.5 - 7 */
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#222222')
+      h6
+        margin-top: 6px
+        margin-bottom: 6px
 
 .srm-container
   perspective: 1000

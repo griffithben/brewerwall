@@ -4,3 +4,4 @@ node_modules/*
 components/*
 .DS_Store
 config/config.php
+.env

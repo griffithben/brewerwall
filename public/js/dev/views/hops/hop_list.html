@@ -11,7 +11,7 @@
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
         <tr>
-          <td><%= model.get('name') %></td>
+          <td><a href="/hops/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('origin') %></td>
           <td><%= model.get('alpha_min') %> - <%= model.get('alpha_max') %></td>
           <td><%= model.get('beta_min') %> - <%= model.get('beta_max') %></td>
