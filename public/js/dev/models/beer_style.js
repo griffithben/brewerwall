@@ -8,7 +8,7 @@
     BeerStyle.Model = Backbone.Model.extend({});
     BeerStyle.Collection = Backbone.Collection.extend({
       model: BeerStyle.Model,
-      url: "/api/beerstyles"
+      url: "/api/styles"
     });
     return {
       collection: new BeerStyle.Collection,

@@ -13,7 +13,7 @@
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
         <tr>
-          <td><%= model.get('name') %></td>
+          <td><a href="/styles/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('origin') %></td>
           <td>
             <% if(model.get('abv_min') == 0 && model.get('abv_max') == 0) { %>
