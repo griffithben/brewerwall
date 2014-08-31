@@ -6,6 +6,12 @@ $app->get('/yeasts', function () use ($app, $adapter)  {
   $app->render('yeasts.html', array('page'=>'yeasts'));
 });
 
+$app->get('/yeasts/:id', function ($id) use ($app, $adapter)  {
+  $collection = new YeastCollection($adapter);
+  $yeast = $collection->id($id)->toArray();
+  $app->render('yeast.html', array('page'=>'yeasts', 'yeast'=>$yeast[0]));
+});
+
 // API
 $app->group('/api', function() use ($app, $adapter) {
 

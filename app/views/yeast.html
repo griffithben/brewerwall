@@ -1,0 +1,54 @@
+{% extends "layout_secondary.html" %}
+{% block script%}
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="secondary-header">
+      <h2>{{ yeast.laboratory }} - {{ yeast.name }}</h2>
+      <div class="secondary-subset pull-right">
+        <span class="label label-primary pull-right">
+          <h6>Strain: {{ yeast.strain }}</h6>
+        </span>
+      </div>
+    </div>
+    <div>
+      <pre id="api-url">brewerwall.dev/api/yeasts/{{ yeast.id }}</pre>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <label class="bold">Attenuation</label>
+    <p>{{ yeast.attenuation_min }}% - {{ yeast.attenuation_max }}%</p>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <label class="bold">Flocculation</label>
+    <p>{{ yeast.flocculation }}</p>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <label class="bold">Temperature</label>
+    <p>{{ yeast.temperature_min }} &deg;F - {{ yeast.temperature_max }} &deg;F</p>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <label class="bold">Tolerance</label>
+    <p>
+      {% if yeast.tolerance > 0 %}
+        {{ yeast.tolerance }}% ABV
+      {% else %}
+        N/A
+      {% endif %}
+      </p>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <label class="bold">Description</label>
+    <p>{{ yeast.description }}</p>
+  </div>
+</div>
+{% endblock %}

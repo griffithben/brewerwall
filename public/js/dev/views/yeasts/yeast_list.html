@@ -12,7 +12,7 @@
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
         <tr>
-          <td><%= model.get('name') %></td>
+          <td><a href="/yeasts/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('laboratory') %></td>
           <td>
             <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>

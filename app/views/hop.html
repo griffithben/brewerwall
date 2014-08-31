@@ -66,19 +66,19 @@
 </div>
 <hr/>
 <div class="row">
-  <div class="col-sm-3 col-md-3">
+  <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Aroma</label>
     <p>{{ hop.aroma }}</p>
   </div>
-  <div class="col-sm-3 col-md-3">
+  <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Styles</label>
     <p>{{ hop.styles }}</p>
   </div>
-  <div class="col-sm-3 col-md-3">
+  <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Storage</label>
     <p>{{ hop.storage }}</p>
   </div>
-  <div class="col-sm-3 col-md-3">
+  <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Source</label>
     <p>{{ hop.source }}</p>
   </div>
@@ -91,7 +91,7 @@
     <label class="bold">Substitutes</label>
     <p>
       {% for substitute in substitutes %}
-        <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a> |
+        <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a> | 
       {% endfor %}
     </p>
   </div>

@@ -14,7 +14,7 @@ $app->get('/hops/:id', function ($id) use ($app, $adapter)  {
   $hop = $collection->id($id)->toArray();
   $collection = new HopSubstituteCollection($adapter);
   $substitutes = $collection->hop($id)->toArray();
-  $app->render('hop.php', array('page'=>'hops', 'hop'=>$hop[0], 'substitutes'=>$substitutes));
+  $app->render('hop.html', array('page'=>'hops', 'hop'=>$hop[0], 'substitutes'=>$substitutes));
 });
 
 
