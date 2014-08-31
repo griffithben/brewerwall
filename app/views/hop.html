@@ -89,11 +89,13 @@
     <label class="bold">Description</label>
     <p>{{ hop.description }}</p>
     <label class="bold">Substitutes</label>
-    <p>
+    <div class="row">
       {% for substitute in substitutes %}
-        <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a> | 
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a><br/>
+        </div>
       {% endfor %}
-    </p>
+    </div>
   </div>
 </div>
 
