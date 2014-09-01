@@ -1,20 +1,29 @@
 <table class="table table-condensed small table-brewerwall-list">
   <thead>
-    <tr>
+    <tr class="hidden-xs">
       <td>Name</td>
       <td>Origin</td>
       <td>Alpha</td>
       <td>Beta</td>
     </tr>
+    <tr class="visible-xs">
+      <td>Hops</td>
+    </tr>
   </thead>
   <tbody>
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
-        <tr>
+        <tr class="hidden-xs">
           <td><a href="/hops/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('origin') %></td>
           <td><%= model.get('alpha_min') %> - <%= model.get('alpha_max') %></td>
           <td><%= model.get('beta_min') %> - <%= model.get('beta_max') %></td>
+        </tr>
+        <tr class="visible-xs">
+          <td>
+            <a href="/hops/<%= model.get('id') %>"><%= model.get('name') %></a><br/>
+            <span class="pull-right"><%= model.get('origin') %></span> Alpha: <%= model.get('alpha_min') %> - <%= model.get('alpha_max') %> |  Beta: <%= model.get('beta_min') %> - <%= model.get('beta_max') %>
+          </td>
         </tr>
       <% }); %>
     <% } else { %>
