@@ -17,7 +17,8 @@
       events: {
         'change #alpha': 'onFilterChange',
         'change #beta': 'onFilterChange',
-        'change #origin': 'onFilterChange'
+        'change #origin': 'onFilterChange',
+        'click #filters-toggle': 'onFilterToggleClick'
       },
       initialize: function() {
         var self;
@@ -28,10 +29,13 @@
         this.ui.beta = this.$el.find('#beta');
         this.ui.origin = this.$el.find('#origin');
         this.ui.filters = this.$el.find('.filter');
+        this.ui.filters_container = this.$el.find('#filters-container');
         this.ui.api_url = this.$el.find('#api-url');
         this.router = new HopRouter;
         this.router.on('route:filter', _.bind(this.filter, this));
         Backbone.history.start();
+        window.onresize = _.bind(this.onWindowResize, this);
+        this.filter_init();
       },
       onFilterChange: function() {
         var navigate;
@@ -48,6 +52,22 @@
         this.router.navigate(navigate.join('/'), {
           trigger: true
         });
+      },
+      onFilterToggleClick: function() {
+        this.filter_toggle();
+      },
+      onWindowResize: function() {
+        this.filter_init();
+      },
+      filter_init: function() {
+        if (window.innerWidth > 768) {
+          this.ui.filters_container.show();
+        } else {
+          this.ui.filters_container.hide();
+        }
+      },
+      filter_toggle: function() {
+        this.ui.filters_container.toggle();
       },
       filter: function() {
         var e, filterData, filterRequest, i, self, _i, _len;

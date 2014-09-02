@@ -17,7 +17,8 @@ define (require) ->
 		events: {
 			'change #alpha' :'onFilterChange',
 			'change #beta' :'onFilterChange',
-			'change #origin' :'onFilterChange'
+			'change #origin' :'onFilterChange',
+			'click #filters-toggle' :'onFilterToggleClick'
 		}
 
 		initialize: () ->
@@ -30,12 +31,16 @@ define (require) ->
 			this.ui.beta = this.$el.find('#beta')
 			this.ui.origin = this.$el.find('#origin')
 			this.ui.filters = this.$el.find('.filter')
+			this.ui.filters_container = this.$el.find('#filters-container')
 			this.ui.api_url = this.$el.find('#api-url')
 
 			# Setup our router
 			this.router = new HopRouter;
 			this.router.on('route:filter', _.bind(this.filter, this))
 			Backbone.history.start()
+
+			window.onresize = _.bind(this.onWindowResize, this)
+			this.filter_init()
 			return
 
 		onFilterChange: () ->
@@ -52,6 +57,25 @@ define (require) ->
 
 			this.router.navigate(navigate.join('/'), {trigger:true})
 
+			return
+
+		onFilterToggleClick: () ->
+			this.filter_toggle()
+			return
+
+		onWindowResize: () ->
+			this.filter_init()
+			return
+
+		filter_init: () ->
+			if window.innerWidth > 768
+				this.ui.filters_container.show()
+			else
+				this.ui.filters_container.hide()
+			return
+
+		filter_toggle: () ->
+			this.ui.filters_container.toggle()
 			return
 
 		filter: () ->

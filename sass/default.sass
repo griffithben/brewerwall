@@ -247,7 +247,11 @@ header
           color: white
           padding: 0px 5px
           font-weight: 400
+.filters-container
+  display: inline-block
 
+.btn-filters
+  margin-top: 20px
 
 @media (max-width: 768px)
   ul.brew-nav
@@ -276,3 +280,15 @@ header
       .links
         float: right
         margin-top: 32px
+  .filters-container
+    background-image: url('/img/opacity_20.png')
+    width: 100%
+    padding: 10px 0px 0px 0px
+    margin-bottom: 10px
+    label
+      width: 70px
+      text-align: right
+  .secondary-header
+    &.with-bar
+      h2:first-child
+        border-right: none
