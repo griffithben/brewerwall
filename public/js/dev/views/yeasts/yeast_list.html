@@ -30,7 +30,11 @@
             <% } %>
           </td>
           <td>
-            <%= model.get('tolerance') %>%
+            <% if(model.get('tolerance') > 0) { %>
+              <%= model.get('tolerance') %>%
+            <% } else { %>
+              N/A
+            <% } %>
           </td>
         </tr>
         <tr class="visible-xs">

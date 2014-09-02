@@ -56,3 +56,4 @@ $app->get('/calculations', function () use ($app, $adapter)  {
 
 //App wide variables
 $app->view()->appendData(array('domain' => getenv('DOMAIN')));
+$app->view()->appendData(array('is_production' => getenv('ENVIRONMENT') == 'PRODUCTION'));
