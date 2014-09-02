@@ -17,7 +17,8 @@
       events: {
         'change #attenuation': 'onFilterChange',
         'change #tolerance': 'onFilterChange',
-        'change #temperature': 'onFilterChange'
+        'change #temperature': 'onFilterChange',
+        'click #filters-toggle': 'onFilterToggleClick'
       },
       initialize: function() {
         var self;
@@ -28,10 +29,13 @@
         this.ui.tolerance = this.$el.find('#tolerance');
         this.ui.temperature = this.$el.find('#temperature');
         this.ui.filters = this.$el.find('.filter');
+        this.ui.filters_container = this.$el.find('#filters-container');
         this.ui.api_url = this.$el.find('#api-url');
         this.router = new YeastRouter;
         this.router.on('route:filter', _.bind(this.filter, this));
         Backbone.history.start();
+        window.onresize = _.bind(this.onWindowResize, this);
+        this.filter_init();
       },
       onFilterChange: function() {
         var navigate;
@@ -48,6 +52,22 @@
         this.router.navigate(navigate.join('/'), {
           trigger: true
         });
+      },
+      onFilterToggleClick: function() {
+        this.filter_toggle();
+      },
+      onWindowResize: function() {
+        this.filter_init();
+      },
+      filter_init: function() {
+        if (window.innerWidth > 768) {
+          this.ui.filters_container.show();
+        } else {
+          this.ui.filters_container.hide();
+        }
+      },
+      filter_toggle: function() {
+        this.ui.filters_container.toggle();
       },
       filter: function() {
         var e, filterData, filterRequest, i, self, _i, _len;

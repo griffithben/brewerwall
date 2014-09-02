@@ -130,7 +130,39 @@ header
   left: 0px
   height: 50px
   width: 100%
-  padding: 15px 10px
+  padding: 15px 15px
+  .logo
+    img
+      width: 24px
+      height: 24px
+      margin-right: 10px
+      vertical-align: top
+    span
+      font-size: 18px
+  .media
+    a
+      margin-left: 8px
+      &:hover
+        color: white
+    float: right
+    .icon
+      width: 18px
+      height: 18px
+
+.icon
+  display: inline-block
+  width: 32px
+  height: 32px
+  fill: currentColor
+
+.icon-facebook
+  /*fill: #000000;*/
+
+.icon-twitter
+  /*fill: #000000;*/
+
+.icon-github
+  /*fill: #000000;*/
 
 .table-brewerwall-list
   thead
@@ -257,8 +289,9 @@ header
   ul.brew-nav
     text-align: center !important
     margin-top: 20px !important
-  div.logo
-    text-align: center !important
+  header
+    div.logo
+      text-align: center !important
 
   div.dot
     width: 40px
@@ -286,7 +319,7 @@ header
     padding: 14px 0px 0px 0px
     margin-bottom: 10px
     label
-      width: 70px
+      width: 80px
       text-align: right
   .secondary-header
     &.with-bar

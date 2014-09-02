@@ -17,7 +17,8 @@ define (require) ->
 		events: {
 			'change #attenuation' :'onFilterChange',
 			'change #tolerance' :'onFilterChange',
-			'change #temperature' :'onFilterChange'
+			'change #temperature' :'onFilterChange',
+			'click #filters-toggle' :'onFilterToggleClick'
 		}
 
 		initialize: () ->
@@ -28,6 +29,7 @@ define (require) ->
 			this.ui.tolerance = this.$el.find('#tolerance')
 			this.ui.temperature = this.$el.find('#temperature')
 			this.ui.filters = this.$el.find('.filter')
+			this.ui.filters_container = this.$el.find('#filters-container')
 			this.ui.api_url = this.$el.find('#api-url')
 
 			# Setup our router
@@ -35,6 +37,8 @@ define (require) ->
 			this.router.on('route:filter', _.bind(this.filter, this))
 			Backbone.history.start()
 
+			window.onresize = _.bind(this.onWindowResize, this)
+			this.filter_init()
 			return
 
 		onFilterChange: () ->
@@ -51,6 +55,25 @@ define (require) ->
 
 			this.router.navigate(navigate.join('/'), {trigger:true})
 
+			return
+
+		onFilterToggleClick: () ->
+			this.filter_toggle()
+			return
+
+		onWindowResize: () ->
+			this.filter_init()
+			return
+
+		filter_init: () ->
+			if window.innerWidth > 768
+				this.ui.filters_container.show()
+			else
+				this.ui.filters_container.hide()
+			return
+
+		filter_toggle: () ->
+			this.ui.filters_container.toggle()
 			return
 
 		filter: () ->

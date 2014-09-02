@@ -1,35 +1,53 @@
 <table class="table table-condensed small table-brewerwall-list">
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Lab</td>
-      <td>Attenuation</td>
-      <td>Temperature</td>
-      <td>Tolerance</td>
+      <td class="hidden-xs">Name</td>
+      <td class="hidden-xs">Lab</td>
+      <td class="hidden-xs">Attenuation</td>
+      <td class="hidden-xs">Temperature</td>
+      <td class="hidden-xs">Tolerance</td>
+      <td class="visible-xs">Yeasts</td>
     </tr>
   </thead>
   <tbody>
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
-        <tr>
+        <tr class="hidden-xs">
           <td><a href="/yeasts/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('laboratory') %></td>
           <td>
             <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
               Any
             <% } else { %>
-              <%= model.get('attenuation_min') %>&nbsp;-&nbsp;<%= model.get('attenuation_max') %>
+              <%= model.get('attenuation_min') %>%&nbsp;-&nbsp;<%= model.get('attenuation_max') %>%
             <% } %>
           </td>
           <td>
             <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
               Any
             <% } else { %>
-              <%= model.get('temperature_min') %>&nbsp;-&nbsp;<%= model.get('temperature_max') %>
+              <%= model.get('temperature_min') %> &deg;F&nbsp;-&nbsp;<%= model.get('temperature_max') %> &deg;F
             <% } %>
           </td>
           <td>
-            <%= model.get('tolerance') %>
+            <%= model.get('tolerance') %>%
+          </td>
+        </tr>
+        <tr class="visible-xs">
+          <td>
+            <span class="pull-right"><%= model.get('laboratory') %></span>
+            <a href="/yeasts/<%= model.get('id') %>"><%= model.get('name') %></a><br/>
+            Attenuation: <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('attenuation_min') %>%&nbsp;-&nbsp;<%= model.get('attenuation_max') %>%
+            <% } %> |
+            Temp: <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('temperature_min') %> &deg;F&nbsp;-&nbsp;<%= model.get('temperature_max') %> &deg;F
+            <% } %> |
+            Tolerance: <%= model.get('tolerance') %>%
           </td>
         </tr>
       <% }); %>
