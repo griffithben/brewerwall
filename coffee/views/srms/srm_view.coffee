@@ -6,7 +6,8 @@ define (require) ->
   SRMView = Backbone.View.extend {
     ui: {}
     events: {
-      'click .srm-container' :'onSrmClick'
+      'click .srm-container' :'onSrmClick',
+      'touchstart .srm-container' :'onSrmClick'
     }
 
     initialize: () ->

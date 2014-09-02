@@ -210,9 +210,17 @@ header
   perspective: 1000
   display: inline-block
   margin: 3px 4px
+  color: white
+  cursor: pointer
   &:hover, &.hover
     .srm
       transform: rotateY(180deg)
+      .front, .back
+
+  &.hover
+    .srm
+      .front, .back
+        background-color: #DDD
   .srm
     transition: 0.6s
     transform-style: preserve-3d
