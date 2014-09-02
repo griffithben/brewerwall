@@ -19,8 +19,9 @@
         </tr>
         <tr class="visible-xs">
           <td>
+            <span class="pull-right"><%= model.get('origin') %></span>
             <a href="/hops/<%= model.get('id') %>"><%= model.get('name') %></a><br/>
-            <span class="pull-right"><%= model.get('origin') %></span> Alpha: <%= model.get('alpha_min') %> - <%= model.get('alpha_max') %> |  Beta: <%= model.get('beta_min') %> - <%= model.get('beta_max') %>
+            Alpha: <%= model.get('alpha_min') %> - <%= model.get('alpha_max') %> |  Beta: <%= model.get('beta_min') %> - <%= model.get('beta_max') %>
           </td>
         </tr>
       <% }); %>

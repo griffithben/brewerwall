@@ -19,7 +19,8 @@
         'change #abv': 'onFilterChange',
         'change #ibu': 'onFilterChange',
         'change #og': 'onFilterChange',
-        'change #fg': 'onFilterChange'
+        'change #fg': 'onFilterChange',
+        'click #filters-toggle': 'onFilterToggleClick'
       },
       initialize: function() {
         var self;
@@ -31,10 +32,13 @@
         this.ui.og = this.$el.find('#og');
         this.ui.fg = this.$el.find('#fg');
         this.ui.filters = this.$el.find('.filter');
+        this.ui.filters_container = this.$el.find('#filters-container');
         this.ui.api_url = this.$el.find('#api-url');
         this.router = new BeerStyleRouter;
         this.router.on('route:filter', _.bind(this.filter, this));
         Backbone.history.start();
+        window.onresize = _.bind(this.onWindowResize, this);
+        this.filter_init();
       },
       onFilterChange: function() {
         var navigate;
@@ -54,6 +58,22 @@
         this.router.navigate(navigate.join('/'), {
           trigger: true
         });
+      },
+      onFilterToggleClick: function() {
+        this.filter_toggle();
+      },
+      onWindowResize: function() {
+        this.filter_init();
+      },
+      filter_init: function() {
+        if (window.innerWidth > 768) {
+          this.ui.filters_container.show();
+        } else {
+          this.ui.filters_container.hide();
+        }
+      },
+      filter_toggle: function() {
+        this.ui.filters_container.toggle();
       },
       filter: function() {
         var e, filterData, filterRequest, i, self, _i, _len;

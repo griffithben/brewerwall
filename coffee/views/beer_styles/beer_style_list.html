@@ -1,18 +1,19 @@
 <table class="table table-condensed small table-brewerwall-list">
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Origin</td>
-      <td>ABV</td>
-      <td>IBU</td>
-      <td>OG</td>
-      <td>FG</td>
+      <td class="hidden-xs">Name</td>
+      <td class="hidden-xs">Origin</td>
+      <td class="hidden-xs">ABV</td>
+      <td class="hidden-xs">IBU</td>
+      <td class="hidden-xs">OG</td>
+      <td class="hidden-xs">FG</td>
+      <td class="visible-xs">Beer Styles</td>
     </tr>
   </thead>
   <tbody>
     <% if(models.length > 0) { %>
       <% _.each(models, function(model, key, list){ %>
-        <tr>
+        <tr class="hidden-xs">
           <td><a href="/styles/<%= model.get('id') %>"><%= model.get('name') %></a></td>
           <td><%= model.get('origin') %></td>
           <td>
@@ -38,6 +39,33 @@
           </td>
           <td>
             <% if(model.get('fg_min') == 0 && model.get('fg_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('fg_min') %>&nbsp;-&nbsp;<%= model.get('fg_max') %>
+            <% } %>
+          </td>
+        </tr>
+        <tr class="visible-xs">
+          <td>
+            <span class="pull-right"><%= model.get('origin') %></span>
+            <a href="/styles/<%= model.get('id') %>"><%= model.get('name') %></a><br/>
+
+            ABV: <% if(model.get('abv_min') == 0 && model.get('abv_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('abv_min') %>&nbsp;-&nbsp;<%= model.get('abv_max') %>
+            <% } %> |
+            IBU: <% if(model.get('ibu_min') == 0 && model.get('ibu_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('ibu_min') %>&nbsp;-&nbsp;<%= model.get('ibu_max') %>
+            <% } %> |
+            OG: <% if(model.get('og_min') == 0 && model.get('og_max') == 0) { %>
+              Any
+            <% } else { %>
+              <%= model.get('og_min') %>&nbsp;-&nbsp;<%= model.get('og_max') %>
+            <% } %> |
+            FG: <% if(model.get('fg_min') == 0 && model.get('fg_max') == 0) { %>
               Any
             <% } else { %>
               <%= model.get('fg_min') %>&nbsp;-&nbsp;<%= model.get('fg_max') %>

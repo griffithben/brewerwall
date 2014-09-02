@@ -2,41 +2,48 @@
   <div class="col-sm-12 col-md-12">
     <div class="secondary-header with-bar">
       <h2>Beer Styles</h2>
-      <div class="form-group">
-        <label>ABV</label>
-        <select id="abv" class="form-control input-sm filter">
-          <option value="0">Any</option>
-          <% for (x = _i = 1; _i <= 15; x = ++_i) { %>
-            <option value="<%= x %>"><%= x %></option>
-          <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>IBU</label>
-        <select id="ibu" class="form-control input-sm filter">
-          <option value="0">Any</option>
-          <% for (x = _i = 1; _i <= 100; x = ++_i) { %>
-            <option value="<%= x %>"><%= x %></option>
-          <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>OG</label>
-        <select id="og" class="form-control input-sm filter">
-          <option value="0">Any</option>
-          <% for (x = _i = 1; _i <= 1.14; x = _i=_i+.005) { %>
-            <option value="<%= x.toFixed(3) %>"><%= x.toFixed(3) %></option>
-          <% } %>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>FG</label>
-        <select id="fg" class="form-control input-sm filter">
-          <option value="0">Any</option>
-          <% for (x = _i = 1; _i <= 1.05; x = _i=_i+.005) { %>
-            <option value="<%= x.toFixed(3) %>"><%= x.toFixed(3) %></option>
-          <% } %>
-        </select>
+      <a id="filters-toggle" class="btn btn-primary pull-right btn-filters visible-xs">Filters</a>
+      <br class="visible-xs"/>
+      <div id="filters-container" class="filters-container">
+        <div class="form-group">
+          <label>ABV</label>
+          <select id="abv" class="form-control input-sm filter">
+            <option value="0">Any</option>
+            <% for (x = _i = 1; _i <= 15; x = ++_i) { %>
+              <option value="<%= x %>"><%= x %></option>
+            <% } %>
+          </select>
+        </div>
+        <br class="visible-xs"/>
+        <div class="form-group">
+          <label>IBU</label>
+          <select id="ibu" class="form-control input-sm filter">
+            <option value="0">Any</option>
+            <% for (x = _i = 1; _i <= 100; x = ++_i) { %>
+              <option value="<%= x %>"><%= x %></option>
+            <% } %>
+          </select>
+        </div>
+        <br class="visible-xs"/>
+        <div class="form-group">
+          <label>OG</label>
+          <select id="og" class="form-control input-sm filter">
+            <option value="0">Any</option>
+            <% for (x = _i = 1; _i <= 1.14; x = _i=_i+.005) { %>
+              <option value="<%= x.toFixed(3) %>"><%= x.toFixed(3) %></option>
+            <% } %>
+          </select>
+        </div>
+        <br class="visible-xs"/>
+        <div class="form-group">
+          <label>FG</label>
+          <select id="fg" class="form-control input-sm filter">
+            <option value="0">Any</option>
+            <% for (x = _i = 1; _i <= 1.05; x = _i=_i+.005) { %>
+              <option value="<%= x.toFixed(3) %>"><%= x.toFixed(3) %></option>
+            <% } %>
+          </select>
+        </div>
       </div>
     </div>
     <div>

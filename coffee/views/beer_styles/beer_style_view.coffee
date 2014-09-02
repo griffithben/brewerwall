@@ -19,7 +19,8 @@ define (require) ->
 			'change #abv' :'onFilterChange',
 			'change #ibu' :'onFilterChange',
 			'change #og' :'onFilterChange',
-			'change #fg' :'onFilterChange'
+			'change #fg' :'onFilterChange',
+			'click #filters-toggle' :'onFilterToggleClick'
 		}
 
 		initialize: () ->
@@ -31,12 +32,16 @@ define (require) ->
 			this.ui.og = this.$el.find('#og')
 			this.ui.fg = this.$el.find('#fg')
 			this.ui.filters = this.$el.find('.filter')
+			this.ui.filters_container = this.$el.find('#filters-container')
 			this.ui.api_url = this.$el.find('#api-url')
 
 			# Setup our router
 			this.router = new BeerStyleRouter;
 			this.router.on('route:filter', _.bind(this.filter, this))
 			Backbone.history.start()
+
+			window.onresize = _.bind(this.onWindowResize, this)
+			this.filter_init()
 
 			return
 
@@ -57,6 +62,25 @@ define (require) ->
 
 			this.router.navigate(navigate.join('/'), {trigger:true})
 
+			return
+
+		onFilterToggleClick: () ->
+			this.filter_toggle()
+			return
+
+		onWindowResize: () ->
+			this.filter_init()
+			return
+
+		filter_init: () ->
+			if window.innerWidth > 768
+				this.ui.filters_container.show()
+			else
+				this.ui.filters_container.hide()
+			return
+
+		filter_toggle: () ->
+			this.ui.filters_container.toggle()
 			return
 
 		filter: () ->
