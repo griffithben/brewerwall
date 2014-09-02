@@ -8,7 +8,7 @@ define (require) ->
 
   Yeast.Collection = Backbone.Collection.extend {
     model: Yeast.Model
-    url: "/api/yeasts"
+    url: "/api/v1/yeasts"
   }
 
   return {

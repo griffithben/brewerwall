@@ -109,7 +109,7 @@ define (require) ->
 		api: (params) ->
 			# build our api endpoint.
 			if(_.isEmpty(params.join('&')))
-				this.ui.api_url.html(_domain+'/api/hops')
+				this.ui.api_url.html(_domain+'/api/v1/hops')
 			else
-				this.ui.api_url.html(_domain+'/api/hops?'+params.join('&'))
+				this.ui.api_url.html(_domain+'/api/v1/hops?'+params.join('&'))
   }

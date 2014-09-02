@@ -8,7 +8,7 @@
     SRM.Model = Backbone.Model.extend({});
     SRM.Collection = Backbone.Collection.extend({
       model: SRM.Model,
-      url: "/api/srms"
+      url: "/api/v1/srms"
     });
     return {
       collection: new SRM.Collection,

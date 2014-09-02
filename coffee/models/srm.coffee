@@ -8,7 +8,7 @@ define (require) ->
 
   SRM.Collection = Backbone.Collection.extend {
     model: SRM.Model
-    url: "/api/srms"
+    url: "/api/v1/srms"
   }
 
   return {

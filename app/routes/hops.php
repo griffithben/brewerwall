@@ -19,7 +19,7 @@ $app->get('/hops/:id', function ($id) use ($app, $adapter)  {
 
 
 // API
-$app->group('/api', function() use ($app, $adapter) {
+$app->group('/api/v1', function() use ($app, $adapter) {
   $app->get('/hops', function () use ($app, $adapter){
     $collection = new HopCollection($adapter);
     $request = (object)$app->request->get();

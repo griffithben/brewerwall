@@ -12,7 +12,7 @@ $app->get('/srms', function () use ($app, $adapter)  {
 
 
 // API
-$app->group('/api', function() use ($app, $adapter) {
+$app->group('/api/v1', function() use ($app, $adapter) {
 
   $app->get('/srms', function () use ($app, $adapter){
     $collection = new SrmCollection($adapter);

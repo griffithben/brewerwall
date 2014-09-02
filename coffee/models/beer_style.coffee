@@ -8,7 +8,7 @@ define (require) ->
 
 	BeerStyle.Collection = Backbone.Collection.extend {
 		model: BeerStyle.Model
-		url: "/api/styles"
+		url: "/api/v1/styles"
 	}
 
 	return {

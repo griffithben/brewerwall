@@ -8,7 +8,7 @@ define (require) ->
 
   Hop.Collection = Backbone.Collection.extend {
     model: Hop.Model
-    url: "/api/hops"
+    url: "/api/v1/hops"
   }
 
   return {

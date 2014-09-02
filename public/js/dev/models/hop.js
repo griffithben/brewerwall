@@ -8,7 +8,7 @@
     Hop.Model = Backbone.Model.extend({});
     Hop.Collection = Backbone.Collection.extend({
       model: Hop.Model,
-      url: "/api/hops"
+      url: "/api/v1/hops"
     });
     return {
       collection: new Hop.Collection,

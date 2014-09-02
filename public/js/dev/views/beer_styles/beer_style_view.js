@@ -101,9 +101,9 @@
       },
       api: function(params) {
         if (_.isEmpty(params.join('&'))) {
-          return this.ui.api_url.html(_domain + '/api/beerstyles');
+          return this.ui.api_url.html(_domain + '/api/v1/beerstyles');
         } else {
-          return this.ui.api_url.html(_domain + '/api/beerstyles?' + params.join('&'));
+          return this.ui.api_url.html(_domain + '/api/v1/beerstyles?' + params.join('&'));
         }
       }
     });
