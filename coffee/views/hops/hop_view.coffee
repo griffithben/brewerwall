@@ -109,7 +109,7 @@ define (require) ->
 		api: (params) ->
 			# build our api endpoint.
 			if(_.isEmpty(params.join('&')))
-				this.ui.api_url.html('brewerwall.dev/api/hops')
+				this.ui.api_url.html(_domain+'/api/hops')
 			else
-				this.ui.api_url.html('brewerwall.dev/api/hops?'+params.join('&'))
+				this.ui.api_url.html(_domain+'/api/hops?'+params.join('&'))
   }

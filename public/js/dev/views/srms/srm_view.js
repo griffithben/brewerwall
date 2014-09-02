@@ -25,9 +25,9 @@
         filterData = {};
         filterRequest = [];
         if (_.isEmpty(filterRequest.join('&'))) {
-          this.ui.api_url.html('brewerwall.dev/api/srms');
+          this.ui.api_url.html(_domain + '/api/srms');
         } else {
-          this.ui.api_url.html('brewerwall.dev/api/srms?' + filterRequest.join('&'));
+          this.ui.api_url.html(_domain + '/api/srms?' + filterRequest.join('&'));
         }
         srm.collection.fetch({
           data: filterData,

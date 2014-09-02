@@ -33,6 +33,7 @@ foreach (glob(__DIR__ . "/routes/*.php") as $filename){ require $filename; }
 //Collections
 foreach (glob(__DIR__ . "/collections/*.php") as $filename){ require_once $filename; }
 
+//Basic Routes
 $app->get('/', function () use ($app, $adapter)  {
   $app->render('index.html');
 });
@@ -52,3 +53,6 @@ $app->get('/grains', function () use ($app, $adapter)  {
 $app->get('/calculations', function () use ($app, $adapter)  {
   $app->render('calculations.html', array('page'=>'calculations'));
 });
+
+//App wide variables
+$app->view()->appendData(array('domain' => getenv('DOMAIN')));

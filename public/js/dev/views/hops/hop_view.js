@@ -95,9 +95,9 @@
       },
       api: function(params) {
         if (_.isEmpty(params.join('&'))) {
-          return this.ui.api_url.html('brewerwall.dev/api/hops');
+          return this.ui.api_url.html(_domain + '/api/hops');
         } else {
-          return this.ui.api_url.html('brewerwall.dev/api/hops?' + params.join('&'));
+          return this.ui.api_url.html(_domain + '/api/hops?' + params.join('&'));
         }
       }
     });
