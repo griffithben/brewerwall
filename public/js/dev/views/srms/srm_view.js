@@ -6,7 +6,9 @@
     srm = require('models/srm');
     return SRMView = Backbone.View.extend({
       ui: {},
-      events: {},
+      events: {
+        'click .srm-container': 'onSrmClick'
+      },
       initialize: function() {
         var self;
         self = this;
@@ -19,7 +21,7 @@
           }
         });
       },
-      onFilterChange: function() {
+      onFilterChange: function(e) {
         var filterData, filterRequest, self;
         self = this;
         filterData = {};
@@ -35,6 +37,9 @@
             return self.ui.list.html(_.template(listtemplate, collection));
           }
         });
+      },
+      onSrmClick: function(e) {
+        $(e.currentTarget).toggleClass('hover');
       }
     });
   });

@@ -5,7 +5,9 @@ define (require) ->
 
   SRMView = Backbone.View.extend {
     ui: {}
-    events: {}
+    events: {
+      'click .srm-container' :'onSrmClick'
+    }
 
     initialize: () ->
       self=this
@@ -18,7 +20,7 @@ define (require) ->
       })
       return
 
-    onFilterChange: () ->
+    onFilterChange: (e) ->
       self=this
       filterData = {}
       filterRequest = []
@@ -33,5 +35,9 @@ define (require) ->
         success: (collection, response, options) ->
           self.ui.list.html(_.template(listtemplate, collection))
       })
+      return
+
+    onSrmClick: (e) ->
+      $(e.currentTarget).toggleClass('hover')
       return
   }
