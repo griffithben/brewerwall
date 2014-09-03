@@ -88,14 +88,16 @@
   <div class="col-sm-12 col-md-12">
     <label class="bold">Description</label>
     <p>{{ hop.description }}</p>
-    <label class="bold">Substitutes</label>
-    <div class="row">
-      {% for substitute in substitutes %}
-        <div class="col-xs-3 col-sm-3 col-md-3">
-          <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a><br/>
-        </div>
-      {% endfor %}
-    </div>
+    {% if substitutes|length > 0 %}
+      <label class="bold">Substitutes</label>
+      <div class="row">
+        {% for substitute in substitutes %}
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <a href="/hops/{{ substitute.id }}">{{ substitute.name }}</a><br/>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 </div>
 
