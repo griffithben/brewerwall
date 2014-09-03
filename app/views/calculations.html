@@ -1,10 +1,14 @@
 {% extends "layout_secondary.html" %}
 {% block script%}
-<script>
-require(["views/calculations/calculation_view"], function(CalculationView) {
-  var calculationView = new CalculationView({el: '#calculationView'});
-});
-</script>
+  {% if is_production %}
+    <script type="text/javascript" src="{{ prod_cache['/js/prod/calculations'] }}.js"></script>
+  {% endif %}
+
+  <script>
+  require(["views/calculations/calculation_view"], function(CalculationView) {
+    var calculationView = new CalculationView({el: '#calculationView'});
+  });
+  </script>
 {% endblock %}
 
 {% block content %}
