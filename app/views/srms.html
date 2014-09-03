@@ -1,10 +1,14 @@
 {% extends "layout_secondary.html" %}
 {% block script%}
-<script>
-require(["views/srms/srm_view"], function(SRMView) {
-  var srmView = new SRMView({el: '#srmView'});
-});
-</script>
+  {% if is_production %}
+    <script type="text/javascript" src="{{ prod_cache['/js/prod/srms'] }}.js"></script>
+  {% endif %}
+
+  <script>
+  require(["views/srms/srm_view"], function(SRMView) {
+    var srmView = new SRMView({el: '#srmView'});
+  });
+  </script>
 {% endblock %}
 
 {% block content %}

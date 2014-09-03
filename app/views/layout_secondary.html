@@ -34,11 +34,15 @@
 			var _domain = "{{ domain }}";
 		</script>
 		{% include 'elements/_analytics.html' %}
-		<script data-main="/js/dev/config" src="/js/components/require.js"></script>
+		{% if is_production %}
+			<script src="/js/components/almond.js"></script>
+		{% else %}
+			<script data-main="/js/dev/config" src="/js/components/require.js"></script>
+		{% endif %}
 		{% block script %}{% endblock %}
 	</head>
 	<body>
-    <div class="container-fluid">
+		<div class="container-fluid">
     	<header>
 				<div class="row">
 					<div class="col-sm-6">

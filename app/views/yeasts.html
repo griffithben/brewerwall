@@ -1,10 +1,16 @@
 {% extends "layout_secondary.html" %}
 {% block script%}
-<script>
-require(["views/yeasts/yeast_view"], function(YeastView) {
-  var yeastView = new YeastView({el: '#yeastView'});
-});
-</script>
+
+  {% if is_production %}
+    <script type="text/javascript" src="{{ prod_cache['/js/prod/yeasts'] }}.js"></script>
+  {% endif %}
+
+  <script>
+    require(["views/yeasts/yeast_view"], function(YeastView) {
+      var yeastView = new YeastView({el: '#yeastView'});
+    });
+  </script>
+
 {% endblock %}
 
 {% block content %}

@@ -95,6 +95,7 @@ module.exports = function(grunt) {
         },
         files: {
           'public/js/components/json2.js':['components/json2/json2.js'],
+          'public/js/components/almond.js':['components/almond/almond.js'],
           'public/js/components/jquery.js':['components/jquery/dist/jquery.js'],
           'public/js/components/underscore.js':['components/underscore/underscore.js'],
           'public/js/components/backbone.js':['components/backbone/backbone.js'],
@@ -139,8 +140,51 @@ module.exports = function(grunt) {
         }
       }
     },
+    requirejs: {
+      yeasts: {
+        options: {
+          baseUrl: "public/js/dev",
+          mainConfigFile: "public/js/dev/config.js",
+          include: ['views/yeasts/yeast_view'],
+          out: "public/js/prod/yeasts.js"
+        }
+      },
+      hops: {
+        options: {
+          baseUrl: "public/js/dev",
+          mainConfigFile: "public/js/dev/config.js",
+          include: ['views/hops/hop_view'],
+          out: "public/js/prod/hops.js"
+        }
+      },
+      srms: {
+        options: {
+          baseUrl: "public/js/dev",
+          mainConfigFile: "public/js/dev/config.js",
+          include: ['views/srms/srm_view'],
+          out: "public/js/prod/srms.js"
+        }
+      },
+      calculations: {
+        options: {
+          baseUrl: "public/js/dev",
+          mainConfigFile: "public/js/dev/config.js",
+          include: ['views/calculations/calculation_view'],
+          out: "public/js/prod/calculations.js"
+        }
+      },
+      beer_styles: {
+        options: {
+          baseUrl: "public/js/dev",
+          mainConfigFile: "public/js/dev/config.js",
+          include: ['views/beer_styles/beer_style_view'],
+          out: "public/js/prod/beer_styles.js"
+        }
+      }
+    }
   });
 
   // Default task(s).
   grunt.registerTask('default', ['clean', 'compass', 'coffee', 'jshint', 'concat', 'uglify', 'requirejs', 'md5']);
+  grunt.registerTask('build', ['requirejs', 'md5']);
 };

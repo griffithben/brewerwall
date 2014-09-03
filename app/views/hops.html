@@ -1,10 +1,14 @@
 {% extends "layout_secondary.html" %}
 {% block script%}
-<script>
-require(["views/hops/hop_view"], function(HopView) {
-  var hopView = new HopView({el: '#hopView'});
-});
-</script>
+  {% if is_production %}
+    <script type="text/javascript" src="{{ prod_cache['/js/prod/hops'] }}.js"></script>
+  {% endif %}
+
+  <script>
+  require(["views/hops/hop_view"], function(HopView) {
+    var hopView = new HopView({el: '#hopView'});
+  });
+  </script>
 {% endblock %}
 
 {% block content %}

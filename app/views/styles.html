@@ -1,10 +1,14 @@
 {% extends "layout_secondary.html" %}
 {% block script%}
-<script>
-require(["views/beer_styles/beer_style_view"], function(BeerStyleView) {
-  var beerStyleView = new BeerStyleView({el: '#beerStyleView'});
-});
-</script>
+  {% if is_production %}
+    <script type="text/javascript" src="{{ prod_cache['/js/prod/beer_styles'] }}.js"></script>
+  {% endif %}
+
+  <script>
+  require(["views/beer_styles/beer_style_view"], function(BeerStyleView) {
+    var beerStyleView = new BeerStyleView({el: '#beerStyleView'});
+  });
+  </script>
 {% endblock %}
 
 {% block content %}
