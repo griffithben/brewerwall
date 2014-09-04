@@ -23,7 +23,13 @@
 <div class="row">
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Attenuation</label>
-    <p>{{ yeast.attenuation_min }}% - {{ yeast.attenuation_max }}%</p>
+    {% if yeast.attenuation_min == 0 and yeast.attenuation_max == 0 %}
+      <p>Any</p>
+    {% elseif yeast.attenuation_min == yeast.attenuation_max and yeast.attenuation_max > 0 %}
+      <p>{{ yeast.attenuation_min }}% +</p>
+    {% else %}
+      <p>{{ yeast.attenuation_min }}% - {{ yeast.attenuation_max }}%</p>
+    {% endif %}
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Flocculation</label>
@@ -31,7 +37,13 @@
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Temperature</label>
-    <p>{{ yeast.temperature_min }} &deg;F - {{ yeast.temperature_max }} &deg;F</p>
+    {% if yeast.temperature_min == 0 and yeast.temperature_max == 0 %}
+      <p>Any</p>
+    {% elseif yeast.temperature_min == yeast.temperature_max and yeast.temperature_min > 0 %}
+      <p>{{ yeast.temperature_min }} &deg;F +</p>
+    {% else %}
+      <p>{{ yeast.temperature_min }} &deg;F - {{ yeast.temperature_max }} &deg;F</p>
+    {% endif %}
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Tolerance</label>

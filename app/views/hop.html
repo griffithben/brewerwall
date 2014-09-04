@@ -10,14 +10,17 @@
       <h2>{{ hop.name }}</h2>
       <div class="secondary-subset pull-right">
         <span class="label label-success pull-right">
-          <h6>{% if hop.type == 'Both' %}
-            Aroma & Bittering
-          {% else %}
-            {{ hop.type }}
-          {% endif %}</h6>
+          <h6>
+            Type:
+            {% if hop.type == 'Both' %}
+              Aroma & Bittering
+            {% else %}
+              {{ hop.type }}
+            {% endif %}
+          </h6>
         </span>
         <span class="label label-primary pull-right">
-          <h6>{{ hop.origin }}</h6>
+          <h6>Origin: {{ hop.origin }}</h6>
         </span>
       </div>
     </div>

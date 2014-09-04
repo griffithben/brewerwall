@@ -18,6 +18,8 @@
           <td>
             <% if(model.get('attenuation_min') == 0 && model.get('attenuation_max') == 0) { %>
               Any
+            <% } else if(model.get('attenuation_min') == model.get('attenuation_max') && model.get('attenuation_max') > 0) {%>
+              <%= model.get('attenuation_min') %>%+
             <% } else { %>
               <%= model.get('attenuation_min') %>%&nbsp;-&nbsp;<%= model.get('attenuation_max') %>%
             <% } %>
@@ -25,6 +27,8 @@
           <td>
             <% if(model.get('temperature_min') == 0 && model.get('temperature_max') == 0) { %>
               Any
+            <% } else if(model.get('temperature_min') == model.get('temperature_max') && model.get('temperature_max') > 0) {%>
+              <%= model.get('temperature_min') %> &deg;F+
             <% } else { %>
               <%= model.get('temperature_min') %> &deg;F&nbsp;-&nbsp;<%= model.get('temperature_max') %> &deg;F
             <% } %>
