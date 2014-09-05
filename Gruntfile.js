@@ -38,6 +38,13 @@ module.exports = function(grunt) {
         options: {
           noLineComments: true,
         },
+      },
+      apidocs: {
+        files: ['app/routes/*.php'],
+        tasks: ['apidoc'],
+        options: {
+          noLineComments: true,
+        },
       }
     },
     compass: {                  // Task
@@ -72,7 +79,7 @@ module.exports = function(grunt) {
     apidoc: {
       myapp: {
         src: "app/routes/",
-        dest: "app/views/"
+        dest: "public/docs/"
       }
     },
     uglify: {
