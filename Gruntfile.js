@@ -12,6 +12,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-md5');
+  grunt.loadNpmTasks('grunt-apidoc');
 
   // Project configuration.
   grunt.initConfig({
@@ -66,6 +67,12 @@ module.exports = function(grunt) {
           // includes files within path and its sub-directories
           {expand: true, cwd: 'coffee/', src: ['**/*.html'], dest: 'public/js/dev/'}
         ]
+      }
+    },
+    apidoc: {
+      myapp: {
+        src: "app/routes/",
+        dest: "app/views/"
       }
     },
     uglify: {

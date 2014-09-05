@@ -17,6 +17,17 @@ $app->get('/styles/:id', function ($id) use ($app, $adapter)  {
 // API
 $app->group('/api/v1', function() use ($app, $adapter) {
 
+  /**
+  * @api {get} /user/:id Request User information
+  * @apiName GetUser
+  * @apiGroup User
+  *
+  * @apiParam {Number} id Users unique ID.
+  *
+  * @apiSuccess {String} firstname Firstname of the User.
+  * @apiSuccess {String} lastname  Lastname of the User.
+  */
+
   $app->get('/styles', function () use ($app, $adapter){
     $collection = new BeerStyleCollection($adapter);
     $request = (object)$app->request->get();
