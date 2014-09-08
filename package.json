@@ -30,5 +30,10 @@
     "jquery": "*",
     "underscore": "*"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "apidoc": {
+    "name": "Brewerwall API",
+    "title": "Brewerwall API",
+    "version": "1.0.0"
+  }
 }
