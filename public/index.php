@@ -15,3 +15,8 @@
 
   //Kick the tires and light the fires.
   $app->run();
+
+  //New Relic name resolution for routes.
+  if(extension_loaded('newrelic')){
+    newrelic_name_transaction($_SERVER['REQUEST_URI']);
+  }
