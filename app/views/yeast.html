@@ -33,7 +33,11 @@
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Flocculation</label>
-    <p>{{ yeast.flocculation }}</p>
+    {% if yeast.flocculation != "" %}
+      <p>{{ yeast.flocculation }}</p>
+    {% else %}
+      <p>N/A</p>
+    {% endif %}
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Temperature</label>
