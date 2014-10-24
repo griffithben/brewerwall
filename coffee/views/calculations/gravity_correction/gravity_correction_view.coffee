@@ -37,7 +37,6 @@ define (require) ->
 
         # Run the calculation
         this.ui.result_value.html(Beercalc.gravityCorrection(parseFloat(this.ui.temp.val()), parseFloat(this.ui.g.val())))
-        alert(Beercalc.gravityCorrection(100.4, 1.050))
 
       else
         this.ui.display_temp.html('Temperature')

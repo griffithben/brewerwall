@@ -30,7 +30,6 @@
           this.ui.display_temp.html(this.ui.temp.val());
           this.ui.display_g.html(this.ui.g.val());
           this.ui.result_value.html(Beercalc.gravityCorrection(parseFloat(this.ui.temp.val()), parseFloat(this.ui.g.val())));
-          alert(Beercalc.gravityCorrection(100.4, 1.050));
         } else {
           this.ui.display_temp.html('Temperature');
           this.ui.display_g.html('Gravity');
