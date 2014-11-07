@@ -9,6 +9,9 @@
     <div class="secondary-header">
       <h2>{{ yeast.laboratory }} - {{ yeast.name }}</h2>
       <div class="secondary-subset pull-right">
+        <span class="label label-success pull-right">
+          <h6>Form: {{ yeast.form }}</h6>
+        </span>
         <span class="label label-primary pull-right">
           <h6>Strain: {% if yeast.strain != "" %} {{ yeast.strain }} {% else %} N/A {% endif %}</h6>
         </span>
