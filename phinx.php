@@ -16,7 +16,8 @@
         "name" => substr($mysql["path"],1),
         "user" => $mysql["user"],
         "pass" => $mysql["pass"],
-        "port" => 3306
+        "port" => 3306,
+        "charset"=> "utf8"
       )
     )
   );
