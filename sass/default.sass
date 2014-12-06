@@ -192,7 +192,7 @@ header
     font-size: 14px
 
 .secondary-header
-  h1, h2, h3, h4, h5, h6, div.form-group, label, select
+  h1, h2, h3, h4, h5, h6, div.form-group, label, select, input
     display: inline-block
 
   &.with-bar
@@ -208,6 +208,9 @@ header
       margin: 0px 3px
     select
       width: 80px
+    input
+      width: 110px
+      display: inline
   .secondary-subset
     display: inline-block
     margin-top: 20px
@@ -314,6 +317,18 @@ header
   text-align: center
   display: inline-block
 
+@media (max-width: 930px)
+  .filters-container
+    border-top: 1px solid white
+    width: 100%
+    padding-top: 10px
+
+  .secondary-header
+    &.with-bar
+      h2:first-child
+        border-right: none
+
+
 @media (max-width: 768px)
   ul.brew-nav
     text-align: center !important
@@ -349,6 +364,7 @@ header
     width: 100%
     padding: 14px 0px 0px 0px
     margin-bottom: 10px
+    border-top: none
     label
       width: 80px
       text-align: right

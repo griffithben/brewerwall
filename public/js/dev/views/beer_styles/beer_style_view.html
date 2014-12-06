@@ -6,6 +6,11 @@
       <br class="visible-xs"/>
       <div id="filters-container" class="filters-container">
         <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" class="form-control input-sm filter"/>
+        </div>
+        <br class="visible-xs"/>
+        <div class="form-group">
           <label>ABV</label>
           <select id="abv" class="form-control input-sm filter">
             <option value="0">Any</option>
@@ -47,7 +52,7 @@
       </div>
     </div>
     <div>
-      <pre id="api-url"><%= _domain %>/api/v1/beerstyles</pre>
+      <pre id="api-url"><%= _domain %>/api/v1/styles</pre>
     </div>
     <div id="list"></div>
   </div>
