@@ -9,6 +9,7 @@ define (require) ->
 			":filter/:val(/)": "filter",
 			":filter/:val/:filter/:val(/)": "filter",
 			":filter/:val/:filter/:val/:filter/:val(/)": "filter"
+			":filter/:val/:filter/:val/:filter/:val/:filter/:val(/)": "filter"
 		}
 	}
 
@@ -18,6 +19,7 @@ define (require) ->
 			'change #attenuation' :'onFilterChange',
 			'change #tolerance' :'onFilterChange',
 			'change #temperature' :'onFilterChange',
+			'keyup #name' : 'onFilterChange',
 			'click #filters-toggle' :'onFilterToggleClick'
 		}
 
@@ -25,6 +27,7 @@ define (require) ->
 			self=this
 			this.$el.append(_.template(viewtemplate))
 			this.ui.list = this.$el.find('#list')
+			this.ui.name = this.$el.find('#name')
 			this.ui.attenuation = this.$el.find('#attenuation')
 			this.ui.tolerance = this.$el.find('#tolerance')
 			this.ui.temperature = this.$el.find('#temperature')
@@ -52,6 +55,9 @@ define (require) ->
 
 			if(this.ui.tolerance.val() != "0")
 				navigate.push("tolerance/"+encodeURIComponent(this.ui.tolerance.val()))
+
+			if(this.ui.name.val() != "")
+				navigate.push("name/"+encodeURIComponent(this.ui.name.val()))
 
 			this.router.navigate(navigate.join('/'), {trigger:true})
 

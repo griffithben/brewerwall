@@ -9,6 +9,7 @@ define (require) ->
 			":filter/:val(/)": "filter",
 			":filter/:val/:filter/:val(/)": "filter",
 			":filter/:val/:filter/:val/:filter/:val(/)": "filter"
+			":filter/:val/:filter/:val/:filter/:val/:filter/:val(/)": "filter"
 		}
 	}
 
@@ -18,6 +19,7 @@ define (require) ->
 			'change #alpha' :'onFilterChange',
 			'change #beta' :'onFilterChange',
 			'change #origin' :'onFilterChange',
+			'keyup #name' : 'onFilterChange',
 			'click #filters-toggle' :'onFilterToggleClick'
 		}
 
@@ -27,6 +29,7 @@ define (require) ->
 			# Setup our UI
 			this.$el.append(_.template(viewtemplate))
 			this.ui.list = this.$el.find('#list')
+			this.ui.name = this.$el.find('#name')
 			this.ui.alpha = this.$el.find('#alpha')
 			this.ui.beta = this.$el.find('#beta')
 			this.ui.origin = this.$el.find('#origin')
@@ -54,6 +57,9 @@ define (require) ->
 
 			if(this.ui.origin.val() != "0")
 				navigate.push("origin/"+encodeURIComponent(this.ui.origin.val()))
+
+			if(this.ui.name.val() != "")
+				navigate.push("name/"+encodeURIComponent(this.ui.name.val()))
 
 			this.router.navigate(navigate.join('/'), {trigger:true})
 
