@@ -26,33 +26,89 @@
 <div class="row">
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Original Gravity</label>
-    <p>{{ style.og_min }} ({{ style.og_plato_min }}&deg;) - {{ style.og_max }} ({{ style.og_plato_max }}&deg;)</p>
+    <p>
+      {% if style.og_min == style.og_max and style.og_min > 0 %}
+        {{ style.og_min }} ({{ style.og_plato_min }}&deg;)+
+      {% elseif style.og_min == style.og_max %}
+        Any
+      {% else %}
+        {{ style.og_min }} ({{ style.og_plato_min }}&deg;) - {{ style.og_max }} ({{ style.og_plato_max }}&deg;)
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Final Gravity</label>
-    <p>{{ style.fg_min }} ({{ style.fg_plato_min }}&deg;) - {{ style.fg_max }} ({{ style.fg_plato_max }}&deg;)</p>
+    <p>
+      {% if style.fg_min == style.fg_max and style.fg_min > 0 %}
+        {{ style.fg_min }} ({{ style.fg_plato_min }}&deg;)+
+      {% elseif style.fg_min == style.fg_max %}
+        Any
+      {% else %}
+        {{ style.fg_min }} ({{ style.fg_plato_min }}&deg;) - {{ style.fg_max }} ({{ style.fg_plato_max }}&deg;)
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">ABW</label>
-    <p>{{ style.abw_min }}% - {{ style.abw_max }}%</p>
+    <p>
+      {% if style.abw_min == style.abw_max and style.abw_min > 0 %}
+        {{ style.abw_min }}%+
+      {% elseif style.abw_min == style.abw_max %}
+        Any
+      {% else %}
+        {{ style.abw_min }}% - {{ style.abw_max }}%
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">ABV</label>
-    <p>{{ style.abv_min }}% - {{ style.abv_max }}%</p>
+    <p>
+      {% if style.abv_min == style.abv_max and style.abv_min > 0 %}
+        {{ style.abv_min }}%+
+      {% elseif style.abv_min == style.abv_max %}
+        Any
+      {% else %}
+        {{ style.abv_min }}% - {{ style.abv_max }}%
+      {% endif %}
+    </p>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">IBU</label>
-    <p>{{ style.ibu_min }} - {{ style.ibu_max }}</p>
+    <p>
+      {% if style.ibu_min == style.ibu_max and style.ibu_min > 0 %}
+        {{ style.ibu_min }}+
+      {% elseif style.ibu_min == style.ibu_max %}
+        Any
+      {% else %}
+        {{ style.ibu_min }} - {{ style.ibu_max }}
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">SRM</label>
-    <p>{{ style.srm_min }} - {{ style.srm_max }}</p>
+    <p>
+      {% if style.srm_min == style.srm_max and style.srm_min > 0 %}
+        {{ style.srm_min }}+
+      {% elseif style.srm_min == style.srm_max %}
+        Any
+      {% else %}
+        {{ style.srm_min }} - {{ style.srm_max }}
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">EBC</label>
-    <p>{{ style.ebc_min }} - {{ style.ebc_max }}</p>
+    <p>
+      {% if style.ebc_min == style.ebc_max and style.ebc_min > 0 %}
+        {{ style.ebc_min }}+
+      {% elseif style.ebc_min == style.ebc_max %}
+        Any
+      {% else %}
+        {{ style.ebc_min }} - {{ style.ebc_max }}
+      {% endif %}
+    </p>
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <label class="bold">Year</label>
