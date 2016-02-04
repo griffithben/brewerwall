@@ -2,7 +2,7 @@
 
 use Zend\Db\Sql\Sql;
 
-if(null == getenv("ENVIRONMENT")){
+if(null === getenv("ENVIRONMENT") || getenv("ENVIRONMENT") === 'dev'){
   Dotenv::load(__DIR__.'/../');
 }
 $mysql = parse_url(getenv(getenv("ENVIRONMENT")."_DATABASE_URL"));
